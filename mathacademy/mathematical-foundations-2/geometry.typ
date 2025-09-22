@@ -7,3 +7,7 @@
 
 *Surface*: $2 pi r^2 + 2 pi r h$\
 *Volume*: $V = pi r ^2 h$
+
+= Spheres
+
+*Surface*: $4 pi r^2$
