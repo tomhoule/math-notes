@@ -1,7 +1,8 @@
 #import "@preview/cetz:0.3.2"
 #import "@preview/cetz-plot:0.1.1"
 
-#set text(font: "Crimson Pro")
+#set text(font: "STIX Two Text")
+#show math.equation: set text(font: "STIX Two Math")
 
 #align(right)[
   #text(size: 10em)[
@@ -87,6 +88,64 @@ So the partial fraction decomposition is:
 
 $
   1/((x-1)(3x-2)) = 1/(x-1) - 3/(3x-2)
+$
+
+=== Exercises
+
+1. Decompose ~ $display((44x+48)/((x+6)(x-3)(x+2)))$
+
+$
+  (44x+48)/((x+6)(x-3)(x+2)) &= A/(x+6) + B/(x-3) + C/(x+2)\
+  44x + 48 &= A(x-3)(x+2) + B(x+6)(x+2) + C(x+6)(x-3)\
+$
+
+Set $x = 3$:
+
+$
+  44 dot 3 + 48 &= B dot 9 dot 5\
+  180/(9 dot 5) &= B\
+  B &= 4
+$
+
+Set $x = -2$:
+
+$
+  44 dot -2 + 48 &= C dot 4 dot -5\
+  -40 &= C dot -20\
+  C &= 2
+$
+
+Set $x = -6$:
+
+$
+  44 dot -6 + 48 &= A dot -9 dot -4\
+  A &= -6
+$
+
+2. Given that
+
+$
+  (-2x-9)/(x+3)x &= 1 / (x+3) + B/x
+$
+
+find $B$
+
+$
+  (-2x-9)/(x+3)x &= 1 / (x+3) + B/x\
+  (-2x-9) &= x + B(x+3)\
+  -3x-9 &= B(x+3)\
+  (-3(x+3))/(x+3) &= B\
+  B &= -3
+$
+
+3. Given that
+
+$
+  (-9x +36)/((x-3)(x-6)) &= -(3)/(x-3) + B/(x-6)\
+  -9x + 36 &= -3(x-6) + B(x-3)\
+  -6x + 18 &= B(x-3)\
+  (-6(x-3))/(x-3) &= B\
+  B &= -6
 $
 
 = Statistics
@@ -199,7 +258,27 @@ But for $lim(x -> 0)$, we have to consider the degree of the leading term of $P(
 - Any function of the form $y = 1/(x^n)$ where $n$ is odd has the same shape as $y = 1/x$. There is no limit at $x = 0$ because left and right limit are not the same.
 - Any function of the form $y = 1/(x^n)$ where $n$ is even has the same shape as $y = 1/x^2$. There is a limit, since the function will approach $infinity$ or $-infinity$.
 
-== Derivation
+== Differentiation
+
+== Constant multiple rule
+
+$
+  d/(d x) (k f(x)) = k d/(d x) (f(x))
+$
+
+== Sum rule
+
+$
+  d/(d x) (u(x) + v(x)) = (d u)/(d x) + (d v)/(d x)
+$
+
+For example for $y = x^2 + x$:
+
+$
+  (d y)/(d x) &= d/(d x) (x^2 + x)\
+  &= d/(d x) (x^2) + d/(d x) (x)\
+  &= 2x + 1
+$
 
 == The power rule
 
