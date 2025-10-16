@@ -203,7 +203,7 @@ Now we can draw the curve:
 #cetz.canvas({
 import cetz.draw: *
 import cetz-plot: *
-  plot.plot(size: (6, 4), x-tick-step: 1, y-tick-step: 20, axis-style: "school-book", {
+  plot.plot(size: (6, 4), x-tick-step: 1, y-tick-step: 10, axis-style: "school-book", {
       plot.add(x => calc.pow(x, 3) + calc.pow(x, 2) - 4*x - 24, domain: (-3, 3.5))
   })
 })
@@ -225,6 +225,10 @@ $(-infinity, infinity)$
 === Reference angle
 
 The _reference angle_ of an angle is the smallest angle between the terminal side of the angle and the x-axis. It is always a positive angle less than or equal to 90 degrees.
+
+=== Pythagorean identity in the first quadrant
+
+In the first quadrant, any point $(x, y)$ forms a right triangle with the origin, where $x$ and $y$ are the lengths of the legs and $sqrt{x^2 + y^2}$ is the length of the hypotenuse. Since in the unit circle, the length of the hyposenuse is 1, by definition, the Pythagorean identity states that $x^2 + y^2 = 1$.
 
 = Calculus
 
@@ -285,6 +289,38 @@ $
 Given a monomial $f(x) = x^n$, where $n$ is a real number,
 
 $f'(x) = n x^(n-1)$
+
+=== Exercises
+
+1. Calculate $(d y)/(d x)$ for $y = 2x - sqrt(x)$
+
+$
+(d y) / (d x)  &= d/(d x) (2x - sqrt(x)) \
+ &= d/ (d x) 2x - d/ (d x) sqrt(x) \
+ &= 2 - (d) / (d x) x^(1 slash 2)\
+ &= 2 - 1/2 dot x^(-1 slash 2) \
+ &= 2 - 1/(2 sqrt(x))
+$
+
+2. Find the derivative of $f(x) = 1/8 x^8$
+
+$
+  f'(x) &= 1/8 dot d/(d x) x^8 \
+  &= 1/8 dot 8 x^7 \
+  &= (8x^7)/8 \
+  &= x^7
+$
+
+3. Derivative of $f(x) = 8sqrt(x)$
+
+$
+f'(x) &= d/(d x) 8 sqrt(x) \
+&= d/(d x) 8 x^(1 slash 2) \
+&= 8 dot d/(d x) (1 / 2 dot x^(-1 slash 2)) \
+&= 8 dot 1/2 dot 1/(2 sqrt(x)) \
+&= 4/sqrt(x)
+
+$
 
 == Integration
 
