@@ -1,8 +1,8 @@
 #import "@preview/cetz:0.3.2"
 #import "@preview/cetz-plot:0.1.1"
 
-#set text(font: "STIX Two Text")
-#show math.equation: set text(font: "STIX Two Math")
+#set text(font: "Noto Serif")
+#show math.equation: set text(font: "Noto Sans Math")
 
 #align(right)[
   #text(size: 10em)[
@@ -156,7 +156,7 @@ Rational functions are of the form:
 
 $ f(x) = (a x^n + b x^(n-1) + ...) / (c x ^ m + d x ^ (m-1) + ...) $
 
-To get the horizontal asymptotes, you first take the *dominant term* It's the leading term of the polynomial in the denominator, _without the coefficient_. Here $x^m$.
+To get the horizontal asymptotes, you first take the *dominant term*. It's the leading term of the polynomial in the denominator, _without the coefficient_. Here $x^m$.
 
 Then, you divide every term in both numerator and denominator, and evaluate at $x -> infinity$.
 
@@ -291,7 +291,7 @@ The _reference angle_ of an angle is the smallest angle between the terminal sid
 
 === Pythagorean identity in the first quadrant
 
-In the first quadrant, any point $(x, y)$ forms a right triangle with the origin, where $x$ and $y$ are the lengths of the legs and $sqrt(x^2 + y^2)$ is the length of the hypotenuse. Since in the unit circle, the length of the hyposenuse is 1, by definition, the Pythagorean identity states that $x^2 + y^2 = 1$.
+In the first quadrant, any point $(x, y)$ forms a right triangle with the origin, where $x$ and $y$ are the lengths of the legs and $sqrt(x^2 + y^2)$ is the length of the hypotenuse. Since in the unit circle, the length of the hypotenuse is 1, by definition, the Pythagorean identity states that $x^2 + y^2 = 1$.
 
 ==== Exercises
 
@@ -402,7 +402,7 @@ cos theta &= (4 sqrt(5))/9\
 therefore\
 tan theta &= (sin theta) / (cos theta)\
 tan theta &= (1/9) / ((4 sqrt(5))/9)\
-tan theta &= 1/9 dot 9 / (4 sqrt(5)) à
+tan theta &= 1/9 dot 9 / (4 sqrt(5))\
 tan theta &= sqrt(5)/20
 $
 
@@ -556,7 +556,7 @@ In general, the antiderivatives of $2x$ follow the pattern $x^2 + C$ where $C$ i
 We can also formulate that using the $integral$ symbol for integration:
 
 $
-  integral 2x d x &= x^2 + C
+  integral 2x space d x &= x^2 + C
 $
 
 Where $C$ is called the *constant of integration*.
@@ -568,7 +568,7 @@ The function being integrated (here $2x$) is called the *integrand*.
 === The power rule for integration
 
 $
-  integral x^n d x = (x^(n+1))/(n+1) + C
+  integral x^n space d x = (x^(n+1))/(n+1) + C
 $
 
 ==== Exercises
