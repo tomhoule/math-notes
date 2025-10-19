@@ -148,6 +148,69 @@ $
   B &= -6
 $
 
+= Functions
+
+== Horizontal asymptotes of rational functions
+
+Rational functions are of the form:
+
+$ f(x) = (a x^n + b x^(n-1) + ...) / (c x ^ m + d x ^ (m-1) + ...) $
+
+To get the horizontal asymptotes, you first take the *dominant term* It's the leading term of the polynomial in the denominator, _without the coefficient_. Here $x^m$.
+
+Then, you divide every term in both numerator and denominator, and evaluate at $x -> infinity$.
+
+== Radical functions
+
+=== Domain
+
+All the values where the radicand $> 0$ for even degrees, $(- infinity, infinity)$ for odd degrees.
+
+==== Exercises
+
+1. Domain of $d(x) = root(7, -2x + 1/2) + 1$?
+
+$
+  -2x + 1/2 >
+$
+
+=== Roots of rational functions
+
+First factor numerator and denominator, then cancel out common factors, then set the numerator to zero and solve.
+
+==== Exercises
+
+1. Solve $f(t) = 0$ where $display(f(t) = (7t^2 + 14)/(t^2 - 25))$.
+
+$
+  (7t^2 + 14)/(t^2 - 25) &= 0\
+  (7(t^2 + 2))/((t+5)(t-5)) &= 0\
+  t^2 + 2 &= 0\
+  t^2 &= -2
+$
+
+2. Solve $f(x) = 0$ where $f(x) = (x^2 + 2x - 15)/(x^3 + 5x^2 - 9x - 45)$.
+
+$
+  (x^2 + 2x - 15)/(x^3 + 5x^2 - 9x - 45) &= 0\
+  (x^2 + 5x - 3x - 15)/(x^2(x + 5) - 9(x + 5)) &= 0\
+  ((x + 5)(x-3))/((x+5)(x^2 - 9)) &= 0\
+  ((x + 5)(x-3))/((x+5)(x - 3)(x+3)) &= 0\
+  1 &= 0
+$
+
+The equation has no solution.
+
+3. Solve $f(t) = 0$ where $f(t) = (t-3)/(t^2 + 6t + 5)$
+
+$
+  (t-3)/(t^2 + 6t + 5) &= 0\
+  (t-3)/(t^2 + t + 5t + 5) &= 0\
+  (t-3)/((t+5)(t+1)) &= 0\
+  t - 3 &= 0\
+  t &= 3
+$
+
 = Statistics
 
 == Variance
@@ -228,7 +291,138 @@ The _reference angle_ of an angle is the smallest angle between the terminal sid
 
 === Pythagorean identity in the first quadrant
 
-In the first quadrant, any point $(x, y)$ forms a right triangle with the origin, where $x$ and $y$ are the lengths of the legs and $sqrt{x^2 + y^2}$ is the length of the hypotenuse. Since in the unit circle, the length of the hyposenuse is 1, by definition, the Pythagorean identity states that $x^2 + y^2 = 1$.
+In the first quadrant, any point $(x, y)$ forms a right triangle with the origin, where $x$ and $y$ are the lengths of the legs and $sqrt(x^2 + y^2)$ is the length of the hypotenuse. Since in the unit circle, the length of the hyposenuse is 1, by definition, the Pythagorean identity states that $x^2 + y^2 = 1$.
+
+==== Exercises
+
+1. For a point in the first quadrant with $y = sqrt(5)/3$, find its $x$ coordinate.
+
+$
+  sqrt((sqrt(5)/3)^2 + x^2) &= 1 \
+  (sqrt(5)/3)^2 + x^2 &= 1 \
+  x^2 &= 1 - (sqrt(5)/3)^2 \
+  x^2 &= 1 - 5/9 \
+  x^2 &= 4/9 \
+  x &= sqrt(4/9) \
+  x &= 2/3
+$
+
+2. Point in the first quadrant. $y$ coordinate is $display(sqrt(2)/3)$. What is the $x$ coordinate?
+
+$
+  sqrt((sqrt(2)/3)^2 + x^2) &= 1 \
+  (sqrt(2)/3)^2 + x^2 &= 1 \
+  x^2 &= 1 - (sqrt(2)/3)^2 \
+  x^2 &= 1 - 2/9 \
+  x^2 &= 7/9 \
+  x &= sqrt(7/9) \
+  x &= sqrt(7)/3
+$
+
+=== Pythagorean trigonometric identity
+
+In the unit circle, since for any central angle $x = cos theta$ and $y = sin theta$.
+
+That means
+
+$
+  x^2 + y^2 &= 1 \
+  cos^2(theta) + sin^2(theta) &= 1
+$
+
+This is the *Pythagorean trigonometric identity*. It works in all quadrants.
+
+==== Exercises
+
+1. Point $P$ on the unit circle with $x = 2/5$. Find $sin theta$.
+
+$
+  sin^2 theta + cos^2 theta &= 1 \
+  sin^2 theta &= 1-cos^2 theta \
+  sin theta &= sqrt(1-cos^2 theta) \
+  sin theta &= sqrt(1 - 4/25) \
+  sin theta &= sqrt(21/25) \
+  sin theta &= sqrt(21)/5
+$
+
+2. $y$ coordinate is $4/9$. Find $cos theta$.
+
+$
+  sin^2 theta + cos^2 theta &= 1 \
+  (4/9)^2 + cos^2 theta &= 1 \
+  cos^2 theta &= 1 - (4/9)^2 \
+  cos^2 theta &= 1 - 16/81 \
+  cos^2 theta &= 65/81 \
+  cos theta &= sqrt(65/81) \
+  cos theta &= sqrt(65)/9
+$
+
+3. $x$ coordinate is $sqrt(7)/4$. Find $csc theta$.
+
+$
+  sin^2 theta + cos^2 theta &= 1 \
+  sin^2 theta &= 1 - cos^2 theta \
+  sin theta &= sqrt(1 - cos^2 theta) \
+  sin theta &= sqrt(1 - (sqrt(7)/4)^2) \
+  sin theta &= sqrt(1 - 7/16) \
+  sin theta &= sqrt(9/16) \
+  sin theta &= 3/4 \
+  therefore \
+  csc theta &= 1/sin theta \
+  csc theta &= 4/3
+$
+
+4. $x$ coordinate is $3/7$. Find $csc theta$.
+
+$
+  sin^2 theta &= 1 - cos^2 theta\
+  sin theta &= sqrt(1 - 9/49)\
+  sin theta &= sqrt(40/49)\
+  sin theta &= sqrt(40)/7\
+  therefore\
+  csc theta &= 1/(sin theta)\
+  csc theta &= 7/sqrt(40)\
+  csc theta &= 7/(2 sqrt(10))\
+  csc theta &= 7/(2 sqrt(10))\
+  csc theta &= (7 sqrt(10))/20\
+$
+
+5. $y$ coordinate is $1/9$. Find $tan theta$.
+
+We have $sin theta = 1/9$.
+
+$
+sin^2 theta + cos^2 theta &= 1 \
+cos theta &= sqrt(1 - sin^2 theta)\
+cos theta &= sqrt(1 - (1/9)^2)\
+cos theta &= sqrt(1 - 1/81)\
+cos theta &= sqrt(80/81)\
+cos theta &= sqrt(80)/9\
+cos theta &= (4 sqrt(5))/9\
+therefore\
+tan theta &= (sin theta) / (cos theta)\
+tan theta &= (1/9) / ((4 sqrt(5))/9)\
+tan theta &= 1/9 dot 9 / (4 sqrt(5)) à
+tan theta &= sqrt(5)/20
+$
+
+6. $x$ coordinate is $sqrt(11)/6$. Find $cot(theta)$
+
+We have $cos theta = sqrt(11)/6$ and $display(cot(theta) = 1/(tan theta) = (cos theta)/(sin theta) = (sqrt(11)/6)/(sin theta))$
+
+$
+  sin^2 theta + cos^2 theta &= 1\
+  sin^2 theta &= 1 - cos^2 theta\
+  sin^2 theta &= 1 - (sqrt(11)/6)^2\
+  sin^2 theta &= 1 - 11/36\
+  sin^2 theta &= 25/36\
+  sin theta &= sqrt(25/36)\
+  sin theta &= 5/6\
+  therefore\
+  cot theta &= (cos theta)/(sin theta)\
+  cot theta &= (sqrt(11)/6)/(5/6)\
+  cot theta &= sqrt(11)/5\
+$
 
 = Calculus
 
@@ -319,7 +513,32 @@ f'(x) &= d/(d x) 8 sqrt(x) \
 &= 8 dot d/(d x) (1 / 2 dot x^(-1 slash 2)) \
 &= 8 dot 1/2 dot 1/(2 sqrt(x)) \
 &= 4/sqrt(x)
+$
 
+=== Rate of change
+
+Average rate of change on an internal $[a, a + h]$:
+
+$
+  (delta y)/(delta x) = (f(a+h) - f(a)) /h
+$
+
+The _instantaneous rate of change_ at a point $x = a$ is given by:
+
+$
+  f'(a) = lim_(h -> 0) (f(a+h) - f(a)) /h
+$
+
+==== Exercises
+
+1. Given that $f(x) = x^2$, what is $f'(2)$ according to the definition?
+
+$
+  f'(2) &= lim_(h -> 0) ((2 + h)^2 - 2^2) /h \
+  &= lim_(h -> 0) (4 + 4h + h^2 - 4) /h \
+  &= lim_(h -> 0) (4h + h^2) /h \
+  &= lim_(h -> 0) (4 + h) \
+  &= 4
 $
 
 == Integration
@@ -430,4 +649,57 @@ $
   integral pi/2 d z &= pi/2 integral z^0 d z\
   &= pi/2 dot z + C\
   &= (pi z)/2 + C
+$
+
+== The sum rule for integration
+
+To take the integral of a sum, you can take the sum of the integrals of each term:
+
+$
+  integral (f(x) plus.minus g(x)) d x = integral f(x) space d x plus.minus integral g(x) space d x
+$
+
+The sum rule can be combined with the constant factor rule to integrate sums of constant multiples of functions:
+
+$
+  integral (k_1 f(x) plus k_2 g(x)) space d x = k_1 integral f(x) space d x plus k_2 integral g(x) space d x
+$
+
+=== Exercises
+
+- Calculate $integral sqrt(x)(2+x) space d x$
+
+$
+  integral sqrt(x)(2+x) space d x &= integral 2sqrt(x) + x dot sqrt(x) space d x \
+  &= integral 2 sqrt(x) space d x + integral x dot sqrt(x) space d x \
+  &= 2 integral sqrt(x) space d x + integral x^(3 slash 2) space d x\
+  &= 2 dot x^(3 slash 2)/(3/2) + x^(5 slash 2)/(5/2) + C\
+  &= (4x^(3 slash 2))/3 + (2x^(5 slash 2))/5 + C\
+  &= (4 sqrt(x^3))/3 + (2sqrt(x^5))/5 + C
+$
+
+- Calculate $display(integral (2 + x^4)/x^2 space d x)$
+
+$
+  integral (2 + x^4)/x^2 space d x &= integral 2/x^2 space d x + integral x^4/x^2 space d x\
+  &= integral 2 dot x^(-2) space d x + integral x^2 space d x\
+  &= 2 dot integral x^(-2) space d x + (x^3)/3 + C\
+  &= 2 dot -x^(-1) + x^3/3 + C\
+$
+
+- Calculate:
+
+$
+  integral (3 - x^2)^2 space d x &= integral (9 - 6x^2 + x^4) space d x\
+  &= 9 integral 1 space d x - 6 integral x^2 space d x + integral x^4 space d x\
+  &= 9x - 6(x^3)/3 + (x^5)/5 + C\
+  &= x^5/5 - 2x^3 + 9x + C
+$
+
+- Find the antiderivative of $z^3 + 2z - 1$
+
+$
+  integral z^3 + 2z - 1 space d z &= integral z^3 space d z + integral 2z space d z - integral 1 space d z\
+  &= z^4/4 + 2 z^2/2 - z + C\
+  &= z^4/4 + z^2 - z + C
 $
