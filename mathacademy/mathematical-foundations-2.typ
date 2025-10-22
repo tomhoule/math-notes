@@ -227,6 +227,23 @@ $
   "Cov"(x, y) = 1/n sum_(i=1)^n (x_i - dash(x))(y_i - dash(y))
 $
 
+== Mean estimation for continuous grouped data
+
+$
+  dash(x) approx 1/n sum_(i = 1)^K f_i dot m_i
+$
+
+where
+
+- $f_i$ is the frequency of the $i$th interval
+- $m_i$ is the midpoint of the $i$th interval
+- $n$ is the total number of observations
+
+==  Estimating a variance for continuous grouped data
+
+$
+  sigma_n^2 approx 1/n sum_(i=1)^K (m_i - dash(x))^2
+$
 
 = Graphing
 
