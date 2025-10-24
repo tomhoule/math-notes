@@ -46,6 +46,25 @@ $
   &= 1 + sqrt(2)
 $
 
+2.
+
+$
+  (x^2y^2)/sqrt(x^3y^3) &= (x^2y^2 sqrt(x^3y^3))/(x^3y^3)\
+  &= (x^2y^2x^(3 slash 2)y^(3 slash 2))/(x^3y^3)\
+  &= (x^(7 slash 2)y^(7 slash 2))/(x^3y^3)\
+  &= sqrt(x y)
+$
+
+3.
+
+$
+  sqrt(12x)/(3 sqrt(2x^2y)) &= (sqrt(12x) dot sqrt(2x^2 y))/(3 dot 2x^2y) \
+  &= (sqrt(24x^3y))/(6x^2y)\
+  &= (sqrt(4x^2 dot 6x y))/(6x^2y)\
+  &= (2x dot sqrt(6x y))/(6x^2y)\
+  &= (sqrt(6x y))/(3x y)\
+$
+
 = Partial fraction decomposition
 
 We have something of the form:
@@ -211,6 +230,12 @@ $
   t &= 3
 $
 
+== Invertible functions
+
+A function is invertible on an interval if and only if it is one-to-one on that interval.
+
+To check if a function is one-to-one, we can use the horizontal line test. If any horizontal line intersects the graph of the function at most once, then the function is one-to-one.
+
 = Statistics
 
 == Variance
@@ -297,6 +322,24 @@ $(0, infinity)$
 == Range
 
 $(-infinity, infinity)$
+
+= Complex Numbers
+
+== Magnitude
+
+The magnitude of a complex number $z = a + b i$ is defined as $|z| = sqrt(a^2 + b^2)$.
+
+== Argument
+
+For any complex number, like $z = 3 + 4i$, there is $arg(z)$ that is the angle (in radians) between the $x$ axis and the complex number in the Argand diagram.
+
+So for $z$:
+
+$
+  tan theta &= 4/3\
+  theta &= arctan(4/3)\
+        &approx 0.93
+$
 
 = Trigonometry
 
@@ -440,6 +483,35 @@ $
   cot theta &= (sqrt(11)/6)/(5/6)\
   cot theta &= sqrt(11)/5\
 $
+
+=== Quadrantal angles
+
+Quadrantal angles are angles that are multiples of $90 degree$. For example, $0 degree$, $90 degree$, $180 degree$, $270 degree$, and $360 degree$ are all quadrantal angles. They lie on an axis.
+
+They are useful to find the values of trigonometric functions. Just remember that for points on the unit circle, $cos theta = x$ and $sin theta = y$.
+
+The corresponding angles on $[0, 360 degree]$ are $0$, $pi / 2$, $pi$, $3pi / 2$, $2pi$.
+
+Example: $cos 0 + sin (pi / 2) = 1 + 1 = 2$
+
+==== Examples
+
+- Find the value of $tan(180 degree) + cot(270 degree)$
+
+$
+  tan(180 degree) + cot(270 degree) &= sin(180 degree)/cos(180 degree) + cos(270 degree)/sin(270 degree)\
+  &= 0/(-1) + 0/(-1)\
+  &= 0
+$
+
+- $sec(pi / 2)$?
+
+$
+  sec(pi / 2) &= 1/cos(pi / 2)\
+  &= 1/0\
+$
+
+So it's undefined.
 
 = Calculus
 
@@ -668,7 +740,7 @@ $
   &= (pi z)/2 + C
 $
 
-== The sum rule for integration
+== The sum rule for indefinite integrals
 
 To take the integral of a sum, you can take the sum of the integrals of each term:
 
