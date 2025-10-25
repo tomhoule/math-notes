@@ -88,6 +88,129 @@ So $(x-1)(4x^3 - 15x^2 - 24x - 5)$. Now divide by $(x-5)$.
 
 So $(x-1)(x-5)(4x^2 + 5x + 1)$.
 
+- Find $P(x)$ given $4x^4 - 8x^3 - 3x^2 + 7x - 2 = (x-2)(x+1)P(x)$.
+
+First divide by $(x+1)$:
+
+```
+-1 | 4   -8   -3   7   -2
+         -4   12  -9    2
+     4  -12    9  -2    0
+```
+
+So $(x+1)(4x^3 -12x^2 + 9x - 2)$. Now divide the remainder by $(x-2)$:
+
+```
+2 |   4   -12   9   -2
+            8  -8    2
+      4    -4   1    0
+```
+
+So $(x+1)(x-2)(4x^2 - 4x + 1)$. So $P(x) = (4x^2 - 4x + 1)$. Factoring further,
+
+$
+  P(x) &= 4x^2 - 4x + 1 \
+  &= (4x^2 - 2x) + (-2x + 1)\
+  &= 2x(2x - 1) - 1(2x - 1)\
+  &= (2x - 1)^2
+$
+
+- Let $p(x) = -6x^4 + 5x^3 + 52x^2 - 19x - 60$. Given that $p(-1) = p(3) = 0$, find the sum of all distinct roots of $p(x)$.
+
+$p(-1) = 0$ means $x = -1$ is a root, so $(x+1)$ is a factor.
+
+$p(3) = 0$ means $x = 3$ is a root, so $(x-3)$ is a factor.
+
+Let's first divide by $(x+1)$.
+
+```
+-1 | -6   5   52   -19   -60
+          6  -11   -41    60
+     -6  11   41   -60     0
+```
+
+So $p(x) = (x+1)(-6x^3 + 11x^2 + 41x -60)$. Now let's divide the remainder by $(x-3)$.
+
+```
+3 | -6   11   41   -60
+        -18  -21    60
+    -6   -7   20     0
+```
+
+So $p(x) = (x+1)(x-3)(-6x^2-7x+20)$.
+
+Factoring the remainder further:
+
+$
+  p(x) &= (x+1)(x-3)(-6x^2-7x+20)\
+  &= (x+1)(x-3)(-6x^2 + 8x) + (-15x + 20))\
+  &= (x+1)(x-3)(2x + 5)(-3x + 4)
+$
+
+The roots are $x = -1, 3, -5/2, 4/3$.
+
+The number we are looking for is $-1 + 3 - 5/2 + 4/3 = 2 - 5/2 + 4/3 = -1/2 + 4/3 = 5/6$.
+
+- Find the distinct roots of $x^4 - 5x^2 + 4$ given $p(1) = p(-1) = 0$.
+
+$(x-1)$ is a factor, let's divide by it first:
+
+```
+1 | 1  0  -5  0  4
+       1   1 -4 -4
+    1  1  -4 -4  0
+```
+
+So $(x-1)(x^3 + x^2 -4x - 4)$. Now divide by $(x+1)$.
+
+```
+-1  |  1  1  -4  -4
+    |    -1   0   4
+       1  0  -4   0
+```
+
+So $(x-1)(x + 1)(x^2 -4) = (x-1)(x + 1)(x+2)(x-2)$.
+
+- Find $P(x)$ given $x^4 -2x^3 -7x^2 + 18x - 18 = (x-3)(x+3)P(x)$.
+
+First let's divide by $(x-3)$:
+
+```
+3 | 1  -2   -7   18   -18
+        3    3  -12    18
+    1   1   -4    6     0
+```
+
+So the remainder is $x^3 + x^2 -4x + 6$. Let's divide by $(x + 3)$.
+
+```
+-3 | 1   1   -4   6
+        -3    6  -6
+     1  -2    2   0
+```
+
+We have $P(x) = x^2 - 2x + 2$.
+
+- Find $P(x)$ given that $x^4 + x^3 - 36x^2 + 37x - 35 = (x-5)(x+7)P(x)$.
+
+First divide by $(x-5)$:
+
+```
+5 |  1   1   -36   37  -35
+         5    30  -30   35
+     1   6    -6    7    0
+```
+
+Remainder: $x^3 + 6x^2 - 6x + 7$. Now divide that by $(x+7)$:
+
+```
+-7 |   1   6   -6   7
+          -7    7  -7
+       1  -1    1   0
+```
+
+Result: $x^2 - x + 1$
+
 = Rationalizing the denominator
 
 In general, you want to avoid radicals in the denominator. To rationalize the denominator, multiply both the numerator and the denominator by the conjugate of the denominator.
