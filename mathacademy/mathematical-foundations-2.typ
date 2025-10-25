@@ -1,8 +1,7 @@
 #import "@preview/cetz:0.3.2"
 #import "@preview/cetz-plot:0.1.1"
 
-#set text(font: "Noto Serif")
-#show math.equation: set text(font: "Noto Sans Math")
+#set text(font: "Crimson Pro")
 
 #align(right)[
   #text(size: 10em)[
@@ -63,6 +62,83 @@ $
   &= (sqrt(4x^2 dot 6x y))/(6x^2y)\
   &= (2x dot sqrt(6x y))/(6x^2y)\
   &= (sqrt(6x y))/(3x y)\
+$
+
+4. Given that $d > 0$.
+
+$
+  (c d)/sqrt(c d^3) &= (c d sqrt(c d^3))/(c d^3)\
+  &= sqrt(c d^3)/(d^2)\
+  &= (sqrt(c) dot d^(3 slash 2))/d^2\
+  &= (sqrt(c) dot d^(1 slash 2))/d\
+  &= sqrt(c d)/d
+$
+
+5. Given that $p > 0$
+
+$
+  (7t)/sqrt(14t p^2) &= (7t dot sqrt(14t p^2))/(14t p^2)\
+  &= (7t p sqrt(14 t))/(14t p^2)\
+  &= sqrt(14 t)/(2p)
+$
+
+6. Given that $a > 0$
+
+$
+  sqrt((5b)/(a^3)) &= sqrt(5b)/sqrt(a^3)\
+  &= sqrt(5b)/(a sqrt(a))\
+  &= sqrt(5a b)/(a sqrt(a)^2)\
+  &= sqrt(5a b)/a^2\
+$
+
+7.
+
+$
+  sqrt((14r)/(p^5)) &= sqrt(14r)/sqrt(p^5)\
+  &= sqrt(14p^5r)/p^5\
+  &= (sqrt(14r) dot p^(5 slash 2))/p^5 \
+  &= sqrt(14p r)/p^3
+$
+
+8.
+
+$
+  sqrt((9a^2)/(b^3)) &= sqrt(9a^2)/sqrt(b^3)\
+  &= sqrt(9a^2)/(b sqrt(b))\
+  &= sqrt(9a^2 b)/(b sqrt(b)^2)\
+  &= (3a sqrt(b))/b^2\
+$
+
+9. Given that $z > 0$.
+
+$
+  sqrt(11/(w z^2)) &= sqrt(11)/sqrt(w z^2)\ç
+  &= sqrt(11)/(z sqrt(w)) \
+  &= sqrt(11w)/(z w)
+$
+
+10.
+
+$
+  sqrt((5a)/(3b)) &= sqrt(5a)/sqrt(3b)\
+  &= sqrt(15a b)/(3b)\
+$
+
+11.
+
+$
+  sqrt((a^2 + 3)/(a^2 - 3)) &= sqrt(a^2 + 3)/sqrt(a^2 - 3)\
+  &= sqrt((a^2 + 3)(a^2 - 3))/(a^2 - 3) \
+  &= sqrt(a^4 - 9)/(a^2 - 3)\
+  &= sqrt(a^4 - 9)/(a^2 - 3)\
+$
+
+12. Given $y > 0$
+
+$
+  (2 + 3sqrt(x y))/(3 sqrt(y)) &= ((2+3sqrt(x y)) dot sqrt(y))/(3y)\
+  &= (3y sqrt(x) + 2sqrt(y))/(3y)\
+  &= sqrt(x) + (2sqrt(y))/(3y)
 $
 
 = Partial fraction decomposition
@@ -547,13 +623,13 @@ But for $lim(x -> 0)$, we have to consider the degree of the leading term of $P(
 
 == Differentiation
 
-== Constant multiple rule
+=== Constant multiple rule
 
 $
   d/(d x) (k f(x)) = k d/(d x) (f(x))
 $
 
-== Sum rule
+=== Sum rule
 
 $
   d/(d x) (u(x) + v(x)) = (d u)/(d x) + (d v)/(d x)
@@ -567,13 +643,13 @@ $
   &= 2x + 1
 $
 
-== The power rule
+=== The power rule
 
 Given a monomial $f(x) = x^n$, where $n$ is a real number,
 
 $f'(x) = n x^(n-1)$
 
-=== Exercises
+==== Exercises
 
 1. Calculate $(d y)/(d x)$ for $y = 2x - sqrt(x)$
 
@@ -604,7 +680,7 @@ f'(x) &= d/(d x) 8 sqrt(x) \
 &= 4/sqrt(x)
 $
 
-=== Rate of change
+==== Rate of change
 
 Average rate of change on an internal $[a, a + h]$:
 
@@ -695,7 +771,7 @@ $
                     &= (z^2)/10 + C
 $
 
-== The constant factor rule for indefinite integrals
+=== The constant factor rule for indefinite integrals
 
 To take the integral of a power function with a constant factor, like $5x^2$, we can take the constant factor out of the integral:
 
@@ -711,7 +787,7 @@ $
 
 Where $k$ is a *constant*. It does not work if $k$ is a variable.
 
-=== Exercises
+==== Exercises
 
 1. Calculate $integral 1/(2y^5) d y$
 
@@ -740,7 +816,7 @@ $
   &= (pi z)/2 + C
 $
 
-== The sum rule for indefinite integrals
+=== The sum rule for indefinite integrals
 
 To take the integral of a sum, you can take the sum of the integrals of each term:
 
@@ -754,7 +830,7 @@ $
   integral (k_1 f(x) plus k_2 g(x)) space d x = k_1 integral f(x) space d x plus k_2 integral g(x) space d x
 $
 
-=== Exercises
+==== Exercises
 
 - Calculate $integral sqrt(x)(2+x) space d x$
 
