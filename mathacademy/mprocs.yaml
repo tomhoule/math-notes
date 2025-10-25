@@ -1,0 +1,6 @@
+procs:
+  typst-mf2:
+    cmd:
+      - typst
+      - watch
+      - mathematical-foundations-2.typ

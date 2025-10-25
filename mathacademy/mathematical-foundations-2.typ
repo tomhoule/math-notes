@@ -18,6 +18,76 @@
 
 #pagebreak()
 
+= Logarithm
+
+== Domain
+
+$(0, infinity)$
+
+== Range
+
+$(-infinity, infinity)$
+
+= Polynomials
+
+== Factor theorem
+
+The factor theorem states that $(x - r)$ is a factor of a polynomial $p(x)$ if and only if the root $x = r$ is also a root of $p(x)$.
+
+=== Exercises
+
+- The polynomial $-5x^4 + 8x^3 + 29x^2 - 20x - 12$ can be expressed as $-(x-1)(x-3) dot P(x)$. Find $P(x)$.
+
+First let's divide by $(x-1)$
+
+```
+1 | -5  8  29  -20  -12
+       -5   3   32   12
+    -5  3  32   12    0
+```
+
+So we have $(x - 1) dot (-5x^3 + 3x^2 + 32x + 12)$
+
+Let's divide by $(x-3)$
+
+```
+3 | -5   3   32   12
+       -15  -36  -12
+    -5 -12   -4    0
+```
+
+So we have $(x - 1)(x - 3)(-5x^2 - 12x - 4)$
+
+So we have $(x - 1) dot (x - 3) dot (-5x^2 - 2x + 4)$
+
+Finally, $-(x-1)(x-3)(5x^2 + 2x + 4)$. So $P(x) = 5x^2 + 2x + 4$.
+
+Factoring further, $P(x) = (5x + 2)(x + 2)$.
+
+- Find the polynomial $P(x)$ given that
+
+$
+  4x^4 - 19x^3 - 9x^2 + 19x + 5 = (x-1)(x-5)P(x)\
+$
+
+First let's divide by $(x-1)$.
+
+```
+1 |  4   -19   -9   19   5
+           4  -15  -24  -5
+     4   -15  -24   -5   0
+```
+
+So $(x-1)(4x^3 - 15x^2 - 24x - 5)$. Now divide by $(x-5)$.
+
+```
+5 | 4   -15  -24   -5
+         20   25    5
+    4     5    1    0
+```
+
+So $(x-1)(x-5)(4x^2 + 5x + 1)$.
+
 = Rationalizing the denominator
 
 In general, you want to avoid radicals in the denominator. To rationalize the denominator, multiply both the numerator and the denominator by the conjugate of the denominator.
@@ -33,6 +103,18 @@ $
 $
 
 == Exercises
+
+-
+$
+  &1 / (1 + sqrt(2))\
+  &= 1 / (1 + sqrt(2)) dot (1 - sqrt(2)) / (1 - sqrt(2)) \
+  &= (1 - sqrt(2)) / ((1 + sqrt(2))(1- sqrt(2))) \
+  &= (1 - sqrt(2)) / (1^2 - sqrt(2)^2) \
+  &= (1 - sqrt(2)) / (1 - 2) \
+  &= (1 - sqrt(2)) / (-1) \
+  &= -1 + sqrt(2)
+$
+
 
 1.
 
