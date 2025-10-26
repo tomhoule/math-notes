@@ -3,6 +3,8 @@
 
 #set text(font: "Crimson Pro")
 
+#let theorem(content) = box(fill: rgb(255, 200, 184), inset: 1em, [*Theorem.* #content])
+
 #align(right)[
   #text(size: 10em)[
     #smallcaps[
@@ -210,6 +212,80 @@ Remainder: $x^3 + 6x^2 - 6x + 7$. Now divide that by $(x+7)$:
 ```
 
 Result: $x^2 - x + 1$
+
+== Polynomial long division
+
+=== Exercises
+
+- What is the remainder of $3x^2 - 2x^2 - 18x - 1$ divided by $3x^2 -8x - 2$?
+
+```
+                x    +2
+3x^2 - 8x - 2 | 3    -2    -18    -1
+                3    -8     -2
+                --------------
+                      6    -16
+                      6    -16    -4
+                      --------------
+                                   3
+```
+
+The remainder is 3.
+
+- What is the remainder when $x^4 - 2x^3 - 4x^2 - 10x - 7$ is divided by $x^2 + 2x + 1$?
+
+```
+              x² -4x   +3
+x² + 2x + 1 | 1   -2   -4   -10   -7
+              1    2    1
+              -----------
+                  -4   -5
+                  -4   -8    -4
+                  -------------
+                        3    -6
+                        3     6    3
+                        -------------
+                            -12x  -10
+```
+
+The remainder is $-12x-10$.
+
+- What is the quotient of $2x^4 - x^2 - 1$ divided by $2x^2 + 1$?
+
+```
+            x²  -1
+2x^2 + 1 |  2    0    -1   0   -1
+            2    0     1
+            ------------
+                      -2
+                      -2   0    1
+                      -----------
+                                0
+```
+
+So it's $x² - 1$.
+
+== Rational roots theorem
+
+The rational roots theorem (a.k.a. rational zeros theorem) gives the rational roots of a polynomial with integer coefficients.
+
+#theorem[Suppose that $p/q in QQ$, in lowest terms, is a root of a polynomial with integer coefficients. Then $p$ must be a factor of the polynomial's constant term, and $q$ must be a factor of its leading coefficient.]
+
+That means every root must take the form $plus.minus "factor of the constant term"/"factor of the leading coefficient"$.
+
+=== Exercises
+
+- For the polynomial $f(x) = 3x^8 - 18x^2 - 33x -18$, how many potential roots are given by the rational roots theorem?
+
+The numerator must be a factor of -18. The denominator must be a factor of 3. So here are the possibilities:
+
+$plus.minus 1/3, plus.minus 2/3, plus.minus 1, plus.minus 2, plus.minus 3, plus.minus 6, plus.minus 9, plus.minus 18$
+
+So 16.
+
+- Given that the polynomial $2x^3 + x^2 + 5x - 3$ has a root in the interval $(0, 3/2)$, find the sum of the distinct real roots of $f(x)$.
+
+TODO
 
 = Rationalizing the denominator
 
@@ -533,6 +609,23 @@ $
   "Cov"(x, y) = 1/n sum_(i=1)^n (x_i - dash(x))(y_i - dash(y))
 $
 
+== Sum of squares
+
+The sum of squares is the sum of the squared differences between each data point and the mean.
+
+$
+  sum_(i=1)^n (x_i - dash(x))^2
+$
+
+Denoted $S_(x x)$. If two variables are involved (covariance), it is denoted as $S_(x y)$.
+
+Shortcut formula:
+
+$
+  S_(x x) = sum_(i=1)^n x_i^2 - 1/n(sum_(i=1)^n x_i)^2\
+  S_(x y) = sum_(i=1)^n x_i y_i - 1/n(sum_(i=1)^n x_i)(sum_(i=1)^n y_i)
+$
+
 == Mean estimation for continuous grouped data
 
 $
@@ -547,8 +640,10 @@ where
 
 ==  Estimating a variance for continuous grouped data
 
+Using the same notation as above:
+
 $
-  sigma_n^2 approx 1/n sum_(i=1)^K (m_i - dash(x))^2
+  sigma_n^2 approx 1/n sum_(i=1)^K f_i dot (m_i - dash(x))^2
 $
 
 = Graphing
@@ -578,7 +673,7 @@ First, synthetic division:
 
 So we have $f(x) = (x - 3)(x^2 + 4x + 8)$
 
-$therefore x = 3$ is a root
+$therefore x = 3$ is a root.
 
 The discriminant of $x^2 + 4x + 8$ is $4^2 - 4 dot 1 dot 8 = -16$, which is negative, so $x = 3$ is the only real root.
 
@@ -793,6 +888,52 @@ $
 $
 
 So it's undefined.
+
+== Law of sines
+
+In any triangle, where $a$, $b$, and $c$ are the lengths of the sides opposite angles $A$, $B$, and $C$ respectively, the law of sines states that:
+
+$
+  a/sin(A) = b/sin(B) = c/sin(C)
+$
+
+For acute angles, the formula can be flipped:
+
+$
+  sin(A)/a = sin(B)/b = sin(C)/c
+$
+
+For obtuse angles, the same formula works, but it will always give acute angles. To find an obtuse angle, subtract the acute angle from $180degree$.
+
+=== Exercises
+
+- Find $a$ if $A = 70degree$, $B = 35degree$, $b = 12$.
+
+$
+  a/sin(A) &= b/sin(B)\
+  a/sin(70degree) &= 12/sin(35degree)\
+  a &= 12 dot sin(70degree) / sin(35degree)\
+  a &approx 12 dot 0.9397 / 0.5736\
+  a &approx 19.66
+$
+
+- $R$, $Q$ and $P$ form a triangle. $P R = 21m$. $angle Q = 89degree$, $angle P = 38degree$. What is $Q R$?
+
+$
+  (Q R) / sin(angle P) &= (P R) / sin(angle Q)\
+  (Q R) / sin(38 degree) &= 21 / sin(89 degree)\
+  Q R &= sin(38 degree) dot 21 / sin(89 degree)\
+$
+
+- $triangle X Y Z$. $angle Y = 57degree$, $X Z = 35$, $X Y = 24$. Find $angle Z$.
+
+$
+  sin(angle Z)/(X Y) &= sin(angle Y)/(X Z)\
+  sin(angle Z)/24 &= sin(57degree)/35\
+  sin(angle Z) &= 24 dot sin(57 degree) / 35\
+  sin(angle Z) &approx 0.575\
+  angle Z &approx 35degree
+$
 
 = Calculus
 
