@@ -3,4 +3,4 @@ procs:
     cmd:
       - typst
       - watch
-      - mathematical-foundations-2.typ
+      - courses/mathematical-foundations-2.typ

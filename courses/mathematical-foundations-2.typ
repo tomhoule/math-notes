@@ -1,7 +1,16 @@
 #import "@preview/cetz:0.3.2"
 #import "@preview/cetz-plot:0.1.1"
 
-#set text(font: "Crimson Pro")
+#set text(font: "Crimson Pro", size: 11pt)
+// #set text(font: "Montserrat", size: 8pt)
+// #set text(font: "Gentium Book Plus", size: 9pt)
+// #set text(font: "Source Serif Pro", size: 9pt)
+// #set text(font: "Junicode", size: 10pt)
+// #set text(font: "STIX Two Text", size: 10pt)
+
+#show math.equation: set text(font: "STIX Two Math", size: 10pt)
+// #show math.equation: set text(font: "Fira Math")
+// #show math.equation: set text(font: "New Computer Modern Math")
 
 #let theorem(content) = box(fill: rgb(255, 200, 184), inset: 1em, [*Theorem.* #content])
 
@@ -232,23 +241,22 @@ $
 
 $
 
+#pagebreak()
 
 = Polynomials
 
-==
-
-=== Forms
+== Forms
 
 - Standard form: $y = a x^2 + b x + c$
 - Vertex form: $y = a(x - h)^2 + k$
   - In this form, the coordinates of the vertex are $(h, k)$
 - Factored form: $y = a(x - x_1)(x - x_2)$
 
-=== Vertex
+== Vertex
 
 If the binomial is given in standard form, the vertex' $x$ coordinate is given by $-b / (2a)$. Once you have the $x$ coordinate, substitute in the equation to find $y$.
 
-=== Domain and range
+== Domain and range
 
 The *domain* is always $( - infinity, + infinity )$.
 
@@ -256,7 +264,10 @@ The *range* is, for upward opening parabolas, assuming vertex form: $y = a(x - h
 
 == Factor theorem
 
-The factor theorem states that $(x - r)$ is a factor of a polynomial $p(x)$ if and only if the root $x = r$ is also a root of $p(x)$.
+#theorem[
+  $(x - r)$ is a factor of a polynomial $p(x)$ if and only if the root $x = r$ is also a root of $p(x)$.
+]
+
 
 === Exercises
 
@@ -771,11 +782,41 @@ Rational functions are of the form:
 
 $ f(x) = (a x^n + b x^(n-1) + ...) / (c x ^ m + d x ^ (m-1) + ...) $
 
-To get the horizontal asymptotes, you first take the *dominant term*. It's the leading term of the polynomial in the denominator, _without the coefficient_. Here $x^m$.
+To get the horizontal asymptotes, first take the *dominant term*. It's the leading term of the polynomial in the denominator, _without the coefficient_. Here $x^m$.
 
-Then, you divide every term in both numerator and denominator by the dominant term, and evaluate at $x -> infinity$.
+Then, divide every term in both numerator and denominator by the dominant term, and evaluate at $x -> infinity$.
 
-== Radical functions
+=== Exercises
+
+- Determine the horizontal asymptote of $f(x) = (x^3 +2x+1)/(x^2-x-12)$
+
+The dominant term in $x^2$. Let's divide by it.
+
+$
+  ((x^3 + 2x + 1)/(x^2))/((x^2-x-12)/(x^2)) &= ((x + 2/x + (1)/(x^2)))/(1 - (x+12)/(x^2)) \
+$
+
+As $x -> infinity$, this becomes $x/1 = x$. Since this is not a constant, there is no horizontal asymptote.
+
+- Find the horizontal asymptote of $(3x^2 + 3)/(6x^2 + x)$.
+
+The dominant term is $x^2$.
+
+$
+  ((3x^2 + 3)/x^2)/((6x^2 + x)/x^2) &= (3 + 3/x^2)/(6 + 1/x)
+$
+
+As $x-> infinity$, this becomes $3/6 = 1/2$. The horizontal asymptote is $y = 1/2$.
+
+- Find the horizontal asymptote of $f(x) = (3x^2 - 2)/(2x^2 + 1)$.
+
+The dominant term is $x^2$.
+
+$
+  ((3x^2 - 2)/x^2)/((2x^2 + 1)/x^2) &= (3 - 2/x^2)/(2 + 1/x^2)
+$
+
+As $x-> infinity$, this becomes $3/2$. The horizontal asymptote is $y = 3/2$.
 
 === Domain
 
