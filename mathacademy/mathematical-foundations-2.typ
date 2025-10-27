@@ -20,6 +20,72 @@
 
 #pagebreak()
 
+= Geometry
+
+== Circles
+
+*Circumference*: $2 pi r$\
+*Surface*: $pi r^2$
+
+== Cylinders
+
+*Surface*: $2 pi r^2 + 2 pi r h$\
+*Volume*: $V = pi r ^2 h$
+
+=== Exercises
+
+- Find an expression for the radius $r$ of the base of a cylinder in terms of its volume $V$ given that the ratio of the radius to the height is $3pi$.
+
+We have $r / (3pi) = h$. Let's substitute that in the volume formula:
+
+$
+  pi r^2 h &= V\
+  pi r^2 r/(3pi) &= V\
+  (pi r^3)/3pi &= V\
+  r^3/3 &= V\
+  r^3 &= 3V\
+  r &= root(3, 3V)
+$
+
+- Calculate the circumference of the base, given volume is $625pi m^2$ and the ratio of its height to its radius is $5$.
+
+$
+  pi r^2 h &= V\
+  pi r^2 dot (5r) &= 625pi\
+  5r^3 &= 625\
+  r^3 &= 125\
+  r &= 5
+$
+
+Now the circumference is $2 pi r = 2 pi (5) = 10 pi$
+
+== Spheres
+
+*Surface*: $4 pi r^2$
+*Volume*: $4/3 pi r^3$
+
+== Triangles
+
+=== Surface
+
+The formula for the area of a triangle from one angle $C$ and its two adjacent sides $a$ and $b$ is:
+
+$
+  1/2 a b sin C
+$
+
+$C$ is called the *included angle*.
+
+== Polygons
+
+The sum of the interior angles of a polygon is always $180 * (n-2)$ where $n$ is the number of sides.
+
+=== Regular polygons
+
+With $n$ as the number of sides, exterior angles are given by:
+
+$theta = 360/n$
+
 = Logarithm
 
 == Domain
@@ -31,6 +97,25 @@ $(0, infinity)$
 $(-infinity, infinity)$
 
 = Polynomials
+
+==
+
+=== Forms
+
+- Standard form: $y = a x^2 + b x + c$
+- Vertex form: $y = a(x - h)^2 + k$
+  - In this form, the coordinates of the vertex are $(h, k)$
+- Factored form: $y = a(x - x_1)(x - x_2)$
+
+=== Vertex
+
+If the binomial is given in standard form, the vertex' $x$ coordinate is given by $-b / (2a)$. Once you have the $x$ coordinate, substitute in the equation to find $y$.
+
+=== Domain and range
+
+The *domain* is always $( - infinity, + infinity )$.
+
+The *range* is, for upward opening parabolas, assuming vertex form: $y = a(x - h)^2 + k$, the range is $[k, +infinity)$.
 
 == Factor theorem
 
@@ -269,7 +354,10 @@ So it's $x² - 1$.
 
 The rational roots theorem (a.k.a. rational zeros theorem) gives the rational roots of a polynomial with integer coefficients.
 
-#theorem[Suppose that $p/q in QQ$, in lowest terms, is a root of a polynomial with integer coefficients. Then $p$ must be a factor of the polynomial's constant term, and $q$ must be a factor of its leading coefficient.]
+#theorem[
+  Suppose that $p/q in QQ$, in lowest terms, is a root of a polynomial with integer coefficients.
+  Then $p$ must be a factor of the polynomial's constant term, and $q$ must be a factor of its leading coefficient.
+]
 
 That means every root must take the form $plus.minus "factor of the constant term"/"factor of the leading coefficient"$.
 
@@ -285,7 +373,21 @@ So 16.
 
 - Given that the polynomial $2x^3 + x^2 + 5x - 3$ has a root in the interval $(0, 3/2)$, find the sum of the distinct real roots of $f(x)$.
 
-TODO
+Using the rational roots theorem, we can find the potential roots of the polynomial. The numerator must be a factor of -3, and the denominator must be a factor of 2. So here are the possibilities in the interval $(0, 3/2)$:
+
+$1/2, 1$
+
+We can quickly find which one of these roots by evaluating the polynomial at these points. It's $1/2$.
+
+Now let's use synthetic division to find the remaining roots:
+
+```
+        2    1   5   -3
+1/2  |       1   1    3
+        2    2   6    0
+```
+
+So $2x^3 + x^2 + 5x - 3 = (x - 1/2)(2x^2 + 2x + 6)$. Since the discriminant of $2x^2 + 2x + 6$ is negative, it has no real roots. Therefore, the only real root is $x = 1/2$.
 
 = Rationalizing the denominator
 
@@ -1026,7 +1128,7 @@ f'(x) &= d/(d x) 8 sqrt(x) \
 &= 4/sqrt(x)
 $
 
-==== Rate of change
+=== Rate of change
 
 Average rate of change on an internal $[a, a + h]$:
 
@@ -1050,6 +1152,52 @@ $
   &= lim_(h -> 0) (4h + h^2) /h \
   &= lim_(h -> 0) (4 + h) \
   &= 4
+$
+
+=== Slope of a tangent line
+
+The derivative of a function $f(x)$ at a point $x = a$ is the slope of the tangent line to the graph of $f(x)$ at that point.
+
+So to find the slope of the tangent line at a point $(x_1, y_1)$, we evaluate $f'(x_1)$.
+
+==== Exercises
+
+- Find the slope of the tangent to $y = 5x^7 - 3x^5 + 10x^3$ at the point where $x = 1$.
+
+First find $f'(x)$:
+
+$
+  f'(x) &= d/(d x) space (5x^7 - 3x^5 + 10x^3)\
+  f'(x) &= 5 dot d/(d x) space x^7 - 3 dot d(d x) space x^5 + 10 dot d/(d x) space x^3\
+  f'(x) &= 5 dot 7x^6 - 3 dot 5x^4 + 10 dot 3x^2\
+  f'(x) &= 35x^6 - 15x^4 + 30x^2\
+  f'(x) &= 5(7x^6 - 3x^4 + 6x^2)
+$
+
+- Find the slope of the tangent to $y = 4x^3 + 5/2 x^2 - 200x$ at $x = 4$.
+
+$
+  f'(x) &= d/(d x) space 4x^3 + 5/2 x^2 - 200x\
+  &= 12x^2 + 5x - 200
+$
+
+The slope is $f'(4) = 12$
+
+- Find the $x$-coordinate of the point on the curve $y = 2x^2 - 9x - 6$ whose tangent has a slope of $3$.
+
+First let's get the derivative of the function:
+
+$
+  f'(x) &= d/(d x) space (2x^2 - 9x - 6)\
+  &= 4x - 9
+$
+
+Now we set the derivative equal to the slope of the tangent line:
+
+$
+  4x - 9 &= 3\
+  4x &= 12\
+  x &= 3
 $
 
 == Integration
