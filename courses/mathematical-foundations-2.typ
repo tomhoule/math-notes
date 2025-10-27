@@ -20,6 +20,72 @@
 
 #pagebreak()
 
+= Combinatorics
+
+== Permutations
+
+Sequences without repetition of $n$, written $attach(P, bl: n, br: k)$, are ordered arrangements of $k$ elements in an $n$ elements set. The formula for the number of permutations is:
+
+$
+  n!/(n-k)!
+$
+
+== Combination
+
+A _combination_ is a selection of elements of a set that has distinct members, such that the order of the selection does not matter.
+
+$
+  binom(n, k)
+$
+
+or
+
+$
+  attach(C, bl: n, br: k)
+$
+
+The number of $k$-combinations of a set of cardinality $n$ is given by:
+
+$
+  binom(n, k) = n!/(k!(n-k)!)
+$
+
+=== Exercises
+
+1. A club has 10 female and 8 male members. Three members are to be chosen at random to represent the club. What is the probability that 2 women and one man will be chosen? Round your answer to the nearest percent.
+
+First let's figure out how many ways to pick there are in total. The order doesn't matter, so we use a permutation:
+
+$
+  N = attach(C, bl: 3, br: 18) = 18!/((18 - 3)!3!) = 816
+$
+
+And how many ways to pick one male ($m$) or two women ($w$):
+
+$
+  m = attach(C, bl: 1, br: 8) = 8! / (8 - 1)! = 8\
+  w = attach(C, bl: 2, br: 10) = 10!/(10-2)! = 45\
+$
+
+Multiplying these two, we get the numbers of ways to pick one man and two women.
+
+Our final result is:
+
+$
+  (m w)/N = (8 dot 45) / 816 = 0.4411764...
+$
+
+*Exercise* What is the probability that among 4 randomly chosen people whose birthdays are all in the last week of September, at least two will have birthdays on the same day? Round your answer to 3 decimal places.
+
+It's easier to answer the question "what is the probability that all their birthdays are on a different day?" and take the complement.
+
+We have 7 days to choose from, so there are $attach(P, bl: 7, br: 4) = 840$ permutations. There are $7^4$ possibilities for all the birthday combinations. We have:
+
+$
+  P(A') &= n/N = 840/7^4 = 0.3498...
+  P(A) &= 1 - P(A') = 0.650...
+$
+
 = Geometry
 
 == Circles
@@ -95,6 +161,77 @@ $(0, infinity)$
 == Range
 
 $(-infinity, infinity)$
+
+= Falling objects
+
+The _displacement_ equation:
+
+$ s = u t + 1/2 g t ^2 $
+
+where:
+
+- $s$ is the *distance* travelled in meters
+- $u$ is the *initial velocity* in m/s
+- $t$ is the *time* in seconds
+- $g$ is the *acceleration due to gravity*, constant equal to $9.8 m slash s^2$
+
+= Geometric Sequences
+
+Geometric sequences are of the form $a_n = a_1 dot r^(n-1)$, where $r$ is called the _common ratio_.
+
+== Exercises
+
+1. Given that a geometric sequence has the first term $a_1 = -2$ and the 4th term $a_4 = -54$, what is the index of the term $-6$?
+
+The formula for $a_n$ is $a_n = b dot r^(n-1)$. Since $a_1 = b$, we have:
+
+$
+  a_4 &= -2 dot r^3\
+  -54 &= -2 dot r^3\
+  27 &= r^3\
+  r &= root(3, 27)\
+  r &= 3
+$
+
+So the formula is $a_n = -2 dot 3^(n-1)$. Now we are looking for the index. We substitute $-6$ for $a_n$:
+
+$
+  -6 &= -2 dot 3^(n-1)\
+  3 &= 3^(n-1)\
+  n &= 2
+$
+
+2. First term: $a_1 = 81$, common ratio $r = 1/3$, and $a_n = 1$. Find $n$.
+
+$
+  1 &= 81 dot (1/3)^(n-1)\
+  1/81 &= (1/3)^(n-1)\
+  (1/3)^4 &= (1/3)^(n-1)\
+  4 &= n - 1\
+  n &= 5
+$
+
+3. Given $a_3 = 36$, $r = 3$, what is the index of the term $108$?
+
+First let's find the formula:
+
+$
+  36 = a_1 dot 3^(3-1)\
+  36 = a_1 dot 9\
+  a_1 = 4\
+$
+
+So $a_n = 4 dot 3^(n-1)$. Now,
+
+$
+  108 &= 4 dot 3^(n-1)\
+  27 &= 3^(n-1)\
+  3^3 &= 3^(n-1)\
+  3 &= n - 1\
+  n &= 4
+
+$
+
 
 = Polynomials
 
