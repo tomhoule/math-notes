@@ -1,14 +1,16 @@
 #import "@preview/cetz:0.3.2"
 #import "@preview/cetz-plot:0.1.1"
 
-#set text(font: "Crimson Pro", size: 11pt)
+// #set text(font: "Crimson Pro", size: 11pt, weight: "light")
+#set text(font: "Crimson Pro", size: 12pt)
+// #set text(font: "EB Garamond", size: 11pt)
 // #set text(font: "Montserrat", size: 8pt)
 // #set text(font: "Gentium Book Plus", size: 9pt)
 // #set text(font: "Source Serif Pro", size: 9pt)
 // #set text(font: "Junicode", size: 10pt)
 // #set text(font: "STIX Two Text", size: 10pt)
 
-#show math.equation: set text(font: "STIX Two Math", size: 10pt)
+#show math.equation: set text(font: "STIX Two Math", size: 11pt)
 // #show math.equation: set text(font: "Fira Math")
 // #show math.equation: set text(font: "New Computer Modern Math")
 
@@ -268,6 +270,7 @@ The *range* is, for upward opening parabolas, assuming vertex form: $y = a(x - h
   $(x - r)$ is a factor of a polynomial $p(x)$ if and only if the root $x = r$ is also a root of $p(x)$.
 ]
 
+#lorem(400)
 
 === Exercises
 
@@ -818,11 +821,49 @@ $
 
 As $x-> infinity$, this becomes $3/2$. The horizontal asymptote is $y = 3/2$.
 
-=== Domain
+== Vertical asymptotes of rational functions
+
+1. Factor numerator and denominator.
+2. Cancel out common factors.
+3. Set the denominator equal to zero and solve for $x$.
+
+=== Exercises
+
+- Vertical asymptotes of $(4x)/(2x^3 + 5x^2 + 2x)$?
+
+$
+  (4x)/(2x^3 + 5x^2 + 2x) &= (4x)/(x(2x^2 + 5x + 2))\
+  &= 4/(2x^2 + 5x + 2)\
+  &= 4/(2x^2 + 4x + x + 2)\
+  &= 4/(2x(x + 2) + 1(x+2))\
+  &= 4/((2x+1)(x+2)
+$
+
+So the vertical asymptotes are $x = -1/2$ and $x = -2$.
+
+- Vertical asymptotes of $f(x) = (x^2 - x - 2)/(x^3 + 7x^2 -x -7)$.
+
+$
+  (x^2 - x - 2)/(x^3 + 7x^2 -x -7) &= (x^2 - 2x + x - 2)/(x^2(x + 7) -1(x+7))\
+  &= (x(x-2) + 1(x-2))/((x - 1)(x+1)(x + 7))\
+  &= ((x+1)(x-2))/((x+1)(x-1)(x+7))\
+  &= (x-2)/((x-1)(x+7))
+$
+
+So the vertical asymptotes are $x = 1$ and $x = -7$.
+
+- Vertical asymptotes of $f(x) = (2x^2 - 10x)/(x^2 + 2x - 8)$.
+
+$
+  (2x^2 - 10x)/(x^2 + 2x - 8) &= (2x(x-5))/(x^2 - 2x + 4x - 8)\
+  &= (2x(x-5))/((x+4)(x-2))
+$
+
+== Domain of radical functions
 
 All the values where the radicand $> 0$ for even degrees, $(- infinity, infinity)$ for odd degrees.
 
-==== Exercises
+=== Exercises
 
 1. Domain of $d(x) = root(7, -2x + 1/2) + 1$?
 
@@ -1305,6 +1346,32 @@ f'(x) &= d/(d x) 8 sqrt(x) \
 &= 8 dot 1/2 dot 1/(2 sqrt(x)) \
 &= 4/sqrt(x)
 $
+
+=== Exponential function
+
+When the base is $e$:
+
+$
+  d/(d x) e^x = e^x
+$
+
+It is the only function whose derivative is itself.
+
+For an arbitrary base $a$:
+
+$
+  d/(d x) a^x = a^x ln(a)
+$
+
+==== Exercises
+
+- Find the slope of the tangent to $f(x) = 5^x +2e^x - ln 2$ at $x = 1$.
+
+$
+  d/(d x) space 5^x + 2e^x - ln 2 &= 5^x ln 5 + 2e^x
+$
+
+Evaluating at $x=1$, we get $5 ln 5 + 2e$
 
 === Rate of change
 
