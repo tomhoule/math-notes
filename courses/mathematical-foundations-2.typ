@@ -2,7 +2,8 @@
 #import "@preview/cetz-plot:0.1.1"
 
 // #set text(font: "Crimson Pro", size: 11pt, weight: "light")
-#set text(font: "Crimson Pro", size: 12pt)
+// #set text(font: "Crimson Pro", size: 12pt)
+#set text(font: "Vollkorn", size: 11pt)
 // #set text(font: "EB Garamond", size: 11pt)
 // #set text(font: "Montserrat", size: 8pt)
 // #set text(font: "Gentium Book Plus", size: 9pt)
@@ -63,7 +64,7 @@ $
 
 === Exercises
 
-1. A club has 10 female and 8 male members. Three members are to be chosen at random to represent the club. What is the probability that 2 women and one man will be chosen? Round your answer to the nearest percent.
+- A club has 10 female and 8 male members. Three members are to be chosen at random to represent the club. What is the probability that 2 women and one man will be chosen? Round your answer to the nearest percent.
 
 First let's figure out how many ways to pick there are in total. The order doesn't matter, so we use a permutation:
 
@@ -86,7 +87,7 @@ $
   (m w)/N = (8 dot 45) / 816 = 0.4411764...
 $
 
-*Exercise* What is the probability that among 4 randomly chosen people whose birthdays are all in the last week of September, at least two will have birthdays on the same day? Round your answer to 3 decimal places.
+- What is the probability that among 4 randomly chosen people whose birthdays are all in the last week of September, at least two will have birthdays on the same day? Round your answer to 3 decimal places.
 
 It's easier to answer the question "what is the probability that all their birthdays are on a different day?" and take the complement.
 
@@ -96,6 +97,45 @@ $
   P(A') &= n/N = 840/7^4 = 0.3498...
   P(A) &= 1 - P(A') = 0.650...
 $
+
+- From a bag containing ten names, of which four are boy's names and six are girl's names, a magician must randomly choose two names to perform a magic trick. What is the probability that he will choose two boy's names?
+
+First let's compute how many possibilities in total there are to choose two names from ten, where order does not matter (combinations):
+
+$
+  10!/(2!(10-2)!) = 45
+$
+
+Now how many ways to pick two boy's names:
+
+$
+  4!/(2!(4-2)!) = 6
+$
+
+So the probability we are looking for is $6/45 = 2/15$.
+
+- From a box that contains 20 colored balls, a child randomly draws 2 black balls and one white ball. What is the probability of this event, given that the box contains 10 balls of each color?
+
+First how many ways to pick 3 balls from 20, where order does not matter (combinations):
+
+$
+  20!/(3!(20-3)!) = 1140
+$
+
+How many to pick 2 black balls out of 10:
+
+$
+  10!/(2!(10-2)!) = 45
+$
+
+And one white ball out of 10:
+
+$
+10!/(1!(10-1)!) = 10
+$
+
+So $(45 dot 10)/1140 approx 0.39$
+
 
 = Geometry
 
@@ -253,6 +293,65 @@ $
 - Vertex form: $y = a(x - h)^2 + k$
   - In this form, the coordinates of the vertex are $(h, k)$
 - Factored form: $y = a(x - x_1)(x - x_2)$
+- Slope-intercept form: $y = m x + b$
+  - In this form, the slope is $m$ and the y-intercept is $b$
+
+=== Exercises
+
+- Find the equation of the line that passes through the point $(1, 3)$ and is parallel to the line passing through the points $(1, -3)$ and $(-1, 7)$.
+
+First let's find the slope of the line:
+
+$
+  (y_2 - y_1) / (x_2 - x_1) = (7 - (-3)) / (-1 - 1) = 10 / -2 = -5
+$
+
+Now the equation of the line passing through $(1, 3)$ with slope $-5$, using point-slope form:
+
+$
+  y-3 = -5(x-1)\
+  y = -5x + 5 + 3\
+  y = -5x +8\
+$
+
+- Find the equation of the line that passes through $(2, 0)$ and is parallel to the line on $(0, 0)$ and $(2, 1)$.
+
+First the slope: $(y_2 - y_1)/(x_2-x_1) = 1/2$.
+
+Then, using point-slope form:
+
+$
+  y-0 = 2(x-2)\
+  y = 2x - 4
+$
+
+- Same. Point: $(0, 0)$. Line: $(0, -2), (-2, 0)$.
+
+Slope: $2/-2 = -1$.
+
+$y ~ -x$
+
+- Same. Point: $(6, 4)$. Line: $(2, -2), (4, -1)$.
+
+Slope: $(-1-(-2))/(4-2) = 1/2$.
+
+Point-slope form:
+
+$
+  y-4 &= 1/2(x-6)\
+  y &= 1/2x - 3 + 4\
+  y &= 1/2x + 1\
+$
+
+- Point: $(-3, 2)$. Line: $(5, -3), (6, -5)$.
+
+Slope: $(-5-(-3))/(6-5) = -2/1 ~ -2$.
+
+$
+  y-2 &= -2(x + 3)\
+  y &= -2x - 6 + 2\
+  y &= -2x -4\
+$
 
 == Vertex
 
@@ -1256,6 +1355,16 @@ $
   angle Z &approx 35degree
 $
 
+== Law of cosines
+
+In a triangle where $a$, $b$ and $c$ are the sides opposite angles $A$, $B$ and $C$ respectively, the law of cosines states that:
+
+$
+  a^2 = b^2 + c^2 - 2b c cos(A)\
+  b^2 = a^2 + c^2 - 2a c cos(B)\
+  c^2 = a^2 + b^2 - 2a b cos(C)\
+$
+
 = Calculus
 
 == Limits
@@ -1606,4 +1715,34 @@ $
   integral z^3 + 2z - 1 space d z &= integral z^3 space d z + integral 2z space d z - integral 1 space d z\
   &= z^4/4 + 2 z^2/2 - z + C\
   &= z^4/4 + z^2 - z + C
+$
+
+= Vectors
+
+== Magnitude
+
+For a vector $accent(A B, arrow) = bold(a)$, we denote its magnitude, a.k.a. modulus or length, as $|accent(A B, arrow)|$ or $|bold(a)|$.
+
+When adding two vectors *that are at a right angle*, through the pythagorean identity, we can deduce:
+
+$|bold(a) + bold(b)|^2 = |bold(a)|^2 + |bold(b)|^2$
+
+When the angle is not a right angle, we can use the law of cosines instead:
+
+$
+  |bold(a) + bold(b)|^2 = |bold(a)^2| + |bold(b)^2| - 2|bold(a)||bold(b)|cos theta
+$
+
+=== Exercises
+
+- In rectangle $A B C D$, $A B = 5$ and $B C = sqrt(39)$. Find $|accent(B D, arrow)|$.
+
+Since all the angles of the rectangle are right angles, and $|accent(B D, arrow)| = |accent(A C, arrow)|$, we have:
+
+$
+  |accent(B D, arrow)|^2 &= |accent(A B, arrow)|^2 + |accent(B C, arrow)^2|\
+  &= 25 + 39\
+  &= 64\
+  |accent(B D, arrow)| &= sqrt(64)\
+  &= 8
 $
