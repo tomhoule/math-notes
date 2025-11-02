@@ -1,18 +1,19 @@
 #import "@preview/cetz:0.3.2"
 #import "@preview/cetz-plot:0.1.1"
 
-// #set text(font: "Crimson Pro", size: 11pt, weight: "light")
-#set text(font: "Crimson Pro", size: 11pt)
-// #set text(font: "Vollkorn", size: 11pt)
-// #set text(font: "EB Garamond", size: 11pt)
-// #set text(font: "Montserrat", size: 8pt)
-// #set text(font: "Gentium Book Plus", size: 9pt)
-// #set text(font: "Source Serif Pro", size: 9pt)
-// #set text(font: "Junicode", size: 10pt)
-// #set text(font: "STIX Two Text", size: 10pt)
+#set text(font: "STIX Two Text")
+#show math.equation: set text(font: "STIX Two Math")
 
-#show math.equation: set text(font: "STIX Two Math", size: 11pt)
+// #set text(font: "TeX Gyre Pagella")
+// #show math.equation: set text(font: "TeX Gyre Pagella Math")
+
+// #set text(font: "EB Garamond")
+// #show math.equation: set text(font: "Garamond-Math")
+
+// #set text(font: "Fira Sans")
 // #show math.equation: set text(font: "Fira Math")
+
+// #set text(font: "New Computer Modern")
 // #show math.equation: set text(font: "New Computer Modern Math")
 
 #let theorem(content) = box(fill: rgb(255, 200, 184), inset: 1em, [*Theorem.* #content])
@@ -31,6 +32,12 @@
 #outline(depth: 1)
 
 #pagebreak()
+
+#lorem(200)
+
+#lorem(100)
+
+_abcdefghijklmnopqrstuvwxyz_ $a b c d e f g h i j k l m n o p q r s t u v w x y z$
 
 = Combinatorics
 
@@ -303,7 +310,7 @@ $
 First let's find the slope of the line:
 
 $
-  (y_2 - y_1) / (x_2 - x_1) = (7 - (-3)) / (-1 - 1) = 10 / -2 = -5
+  (y_2 - y_1) / (x_2 - x_1) = (7 - (-3)) / (-1 - 1) = 10 / (-2) = -5
 $
 
 Now the equation of the line passing through $(1, 3)$ with slope $-5$, using point-slope form:
@@ -327,9 +334,9 @@ $
 
 - Same. Point: $(0, 0)$. Line: $(0, -2), (-2, 0)$.
 
-Slope: $2/-2 = -1$.
+Slope: $2/(-2) = -1$.
 
-$y ~ -x$
+$y = -x$
 
 - Same. Point: $(6, 4)$. Line: $(2, -2), (4, -1)$.
 
@@ -345,7 +352,7 @@ $
 
 - Point: $(-3, 2)$. Line: $(5, -3), (6, -5)$.
 
-Slope: $(-5-(-3))/(6-5) = -2/1 ~ -2$.
+Slope: $(-5-(-3))/(6-5) = -2/1 = -2$.
 
 $
   y-2 &= -2(x + 3)\
@@ -368,8 +375,6 @@ The *range* is, for upward opening parabolas, assuming vertex form: $y = a(x - h
 #theorem[
   $(x - r)$ is a factor of a polynomial $p(x)$ if and only if the root $x = r$ is also a root of $p(x)$.
 ]
-
-#lorem(400)
 
 === Exercises
 
@@ -1484,7 +1489,7 @@ Evaluating at $x=1$, we get $5 ln 5 + 2e$
 
 === Rate of change
 
-Average rate of change on an internal $[a, a + h]$:
+Average rate of change on an interval $[a, a + h]$:
 
 $
   (delta y)/(delta x) = (f(a+h) - f(a)) /h
@@ -1673,7 +1678,7 @@ $
 $
   integral 1/x^4 d x &= integral x^(-4) d x\
                      &= (x^(-4 + 1))/(-4 + 1) + C\
-                     &= x^(-3)/-3 + C\
+                     &= x^(-3)/(-3) + C\
                      &= - 1/3x^(3) + C
 $
 
@@ -1712,7 +1717,7 @@ $
 This is the *constant factor rule*. In general:
 
 $
-  integral k f(x) d x = k integral f(x) d x
+  integral k space f(x) space d x = k integral f(x) space d x
 $
 
 Where $k$ is a *constant*. It does not work if $k$ is a variable.
@@ -1808,7 +1813,7 @@ $
 $
 
 Why, in the negative case? We have two functions, chained. $|x| = -x$ if x is negative. So we have $ln |x| = ln (-x)$.
-By the chain rule, $(d y)/(d x) = (d y)/(d u) dot (d u)/(d x)$. Here $(d u) dot (d x) (-x) = -1$ (constant factor rule), and $(d y)/(d u) ln(u) = 1/u$. So we substitute $x$ back in, and we get $(d y)/(d x) = 1/-x dot -1 = 1/x$
+By the chain rule, $(d y)/(d x) = (d y)/(d u) dot (d u)/(d x)$. Here $(d u) dot (d x) (-x) = -1$ (constant factor rule), and $(d y)/(d u) ln(u) = 1/u$. So we substitute $x$ back in, and we get $(d y)/(d x) = 1/(-x) dot -1 = 1/x$
 
 So the integral is:
 
@@ -1845,3 +1850,11 @@ $
   |accent(B D, arrow)| &= sqrt(64)\
   &= 8
 $
+
+== Determining whether two vectors are parallel
+
+In general, two vectors $bold(a)$ and $bold(b)$ are *parallel*, a.k.a. *colinear*, if there is a number $lambda$ such that $a = lambda b$.
+
+That is also denoted $bold(a) || bold(b)$.
+
+Note that for any vector $bold(a)$, $0 dot bold(a)$ is equal to the zero vector, so by definition, the zero vector is parellel to all other vectors.
