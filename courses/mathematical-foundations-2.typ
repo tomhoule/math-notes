@@ -2,8 +2,8 @@
 #import "@preview/cetz-plot:0.1.1"
 
 // #set text(font: "Crimson Pro", size: 11pt, weight: "light")
-// #set text(font: "Crimson Pro", size: 12pt)
-#set text(font: "Vollkorn", size: 11pt)
+#set text(font: "Crimson Pro", size: 11pt)
+// #set text(font: "Vollkorn", size: 11pt)
 // #set text(font: "EB Garamond", size: 11pt)
 // #set text(font: "Montserrat", size: 8pt)
 // #set text(font: "Gentium Book Plus", size: 9pt)
@@ -1715,6 +1715,23 @@ $
   integral z^3 + 2z - 1 space d z &= integral z^3 space d z + integral 2z space d z - integral 1 space d z\
   &= z^4/4 + 2 z^2/2 - z + C\
   &= z^4/4 + z^2 - z + C
+$
+
+=== Integrating reciprocal functions
+
+Since $d/(d x) (ln x) = 1/x$ for $x > 0$, we can generalize to $x ≠ 0$ by using an absolute value:
+
+$
+  d/(d x) (ln |x|) = 1/x
+$
+
+Why, in the negative case? We have two functions, chained. $|x| = -x$ if x is negative. So we have $ln |x| = ln (-x)$.
+By the chain rule, $(d y)/(d x) = (d y)/(d u) dot (d u)/(d x)$. Here $(d u) dot (d x) (-x) = -1$ (constant factor rule), and $(d y)/(d u) ln(u) = 1/u$. So we substitute $x$ back in, and we get $(d y)/(d x) = 1/-x dot -1 = 1/x$
+
+So the integral is:
+
+$
+  integral 1/x space d x = ln |x| + C
 $
 
 = Vectors
