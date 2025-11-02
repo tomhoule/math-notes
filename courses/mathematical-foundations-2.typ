@@ -1554,6 +1554,88 @@ $
   x &= 3
 $
 
+=== Finding the equation of a tangent line at a point
+
+- Find the derivative.
+- Evaluate the derivative at the given $x$. That is the slope.
+- Replace the slope, the $x$ and $y$ coordinates we are interested in in the point-slope form of the equation: $y - y_1 = m(x - x_1)$.
+
+==== Exercises
+
+- Find the equation of the tangent to the curve $y = x^2 + 5x$ at the point $(-1, -4)$.
+
+First find the derivative:
+
+$
+  y' = 2x + 5
+$
+
+Find the slope: $2 * -1 + 5 = 3$.
+
+Now substitute the coordinates in the point-slope form:
+
+$
+  y + 4 &= 3(x + 1)\
+  y &= 3x + 3 - 4\
+  y &= 3x - 1
+$
+
+- Find the equation of the tangent line to the curve $y = 2/x^2 + 6x$ at $(-1,-4)$.
+
+First the derivative: $y' = 2 dot -2x^(-1) + 6 = -4/x + 6$
+
+Then the slope: $(-4)/(-1) + 6 = 10$.
+
+Finally, substitute in the point-slope form:
+
+$
+  (y+4) &= 10(x + 1)\
+  y &= 10x + 10 - 4\
+  y &= 10x + 6
+$
+
+- Find where the tangent to the curve $y = 4sqrt(x) - 4x$ at $(1, 0)$ intersects the $y$-axis.
+
+First, find the derivative: $y' = d/(d x) (4sqrt(x) - 4x) = 4 dot 1/2 dot x^(-frac(1, 2, style: "skewed") ) - 4 = 2/sqrt(x) -4$
+
+Then, the slope: $2/sqrt(1) - 4 = 2 - 4 = -2$.
+
+The equation:
+
+$
+  y - 0 &= -2(x - 1)\
+  y &= -2x + 2
+$
+
+Then set $x = 0$:
+
+$
+  y &= -2x + 2\
+  y &= 2
+$
+
+- Find where the tangent to the curve $y = 9/x - 2x$ at the point $(3, -3)$ intersects the $x$-axis.
+
+First, find the derivative: $y' = 9 dot -1 dot x^(-2) - 2 = -9/(x^2) - 2$.
+
+Then the slope: $-9/(3^2) - 2 = -9/9 - 2 = -1 - 2 = -3$.
+
+Substitute in the point-slope equation:
+
+$
+  y + 3 &= -3(x - 3)\
+  y &= -3x + 9 - 3\
+  y &= -3x + 6
+$
+
+Then, set $y = 0$:
+
+$
+  0 &= -3x + 6\
+  -6 &= -3x\
+  x &= 2
+$
+
 == Integration
 
 === The antiderivative
