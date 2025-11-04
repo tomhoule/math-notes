@@ -1370,6 +1370,17 @@ $
   c^2 = a^2 + b^2 - 2a b cos(C)\
 $
 
+== Trigonometric functions of complementary angles
+
+In a right triangle $A B C$ where $angle B = 90 degree$:
+
+$
+  sin A = (B C)/(A C), & #h(5em) & cos C = (B C)/(A C),\
+  sin C = (A B)/(A C), & & cos A = (A B) / (A C) \
+$
+
+See, $sin A = cos C$ and $sin C = cos A$.
+
 = Calculus
 
 == Limits
@@ -1821,6 +1832,42 @@ $
   integral 1/x space d x = ln |x| + C
 $
 
+=== Integrating exponential functions
+
+Since $d/(d x) e^x = e^x$, and integration is the inverse of differentiation:
+
+$
+  integral e^x space d x = e^x + C
+$
+
+With a general base, the integral becomes:
+
+$
+  integral a^x space d x = (a^x)/ln(a) + C
+$
+
+==== Exercises
+
+- Calculate $integral (1/8)^x d x$.
+
+$
+  integral (1/8)^x d x &= (frac(1, 8, style: "skewed")^x)/ln(frac(1, 8, style: "skewed")) + C \
+$
+
+Using the laws of logarithms:
+
+$
+  ln(frac(1, 8, style: "skewed")) &= ln(1) - ln(8) \
+  &= 0 - ln 8 \
+  &= -ln 8
+$
+
+So the answer is:
+
+$
+  -(frac(1, 8, style: "vertical"))^x / (ln 8) + C
+$
+
 = Vectors
 
 == Magnitude
@@ -1858,3 +1905,13 @@ In general, two vectors $bold(a)$ and $bold(b)$ are *parallel*, a.k.a. *colinear
 That is also denoted $bold(a) || bold(b)$.
 
 Note that for any vector $bold(a)$, $0 dot bold(a)$ is equal to the zero vector, so by definition, the zero vector is parellel to all other vectors.
+
+== Unit vectors
+
+A *unit vector* is a vector whose magnitude is one.
+
+For any vector $bold(a)$, you can divide it by its magnitude to get a unit vector:
+
+$
+  bold(u) = bold(a)/bold(|a|)
+$
