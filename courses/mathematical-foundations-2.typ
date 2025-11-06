@@ -1,6 +1,12 @@
 #import "@preview/cetz:0.3.2"
 #import "@preview/cetz-plot:0.1.1"
 
+// #set text(font: "IBM Plex Sans", size: 9pt)
+// #set text(font: "Noto Sans", size: 10.5pt)
+// #set text(font: "Roboto", size: 10.5pt)
+// #set text(font: "Source Sans Pro")
+// #show math.equation: set text(font: "STIX Two Math")
+
 #set text(font: "STIX Two Text")
 #show math.equation: set text(font: "STIX Two Math")
 
@@ -10,13 +16,35 @@
 // #set text(font: "EB Garamond")
 // #show math.equation: set text(font: "Garamond-Math")
 
+
 // #set text(font: "Fira Sans")
 // #show math.equation: set text(font: "Fira Math")
 
 // #set text(font: "New Computer Modern")
 // #show math.equation: set text(font: "New Computer Modern Math")
 
+#let accent-color = rgb(0x26, 0x42, 0x8b)
 #let theorem(content) = box(fill: rgb(255, 200, 184), inset: 1em, [*Theorem.* #content])
+#let exercises = [=== Exercises]
+
+#show heading.where(level: 1, outlined: true): this => {
+  [
+    #pagebreak()
+    #block(stroke: (bottom: (paint: rgb(100, 100, 100), thickness: .5pt)), width: 80%, inset: (bottom: 6pt))[
+      #text(size: 18pt, weight: "medium", this.body)
+    ]
+    #v(.5em)
+  ]
+}
+
+#show heading.where(level: 2): this => {
+  block(text(weight: "medium", fill: accent-color, this.body), inset: (top: .4em, bottom: .4em))
+}
+
+#show heading.where(level: 3): this => {
+  // emph(text(weight: "medium", this.body))
+  text(weight: "regular", smallcaps(this.body))
+}
 
 #align(right)[
   #text(size: 10em)[
@@ -25,7 +53,6 @@
     ]
   ]
 ]
-
 
 #v(14em)
 
@@ -69,7 +96,7 @@ $
   binom(n, k) = n!/(k!(n-k)!)
 $
 
-=== Exercises
+#exercises
 
 - A club has 10 female and 8 male members. Three members are to be chosen at random to represent the club. What is the probability that 2 women and one man will be chosen? Round your answer to the nearest percent.
 
@@ -156,7 +183,7 @@ So $(45 dot 10)/1140 approx 0.39$
 *Surface*: $2 pi r^2 + 2 pi r h$\
 *Volume*: $V = pi r ^2 h$
 
-=== Exercises
+#exercises
 
 - Find an expression for the radius $r$ of the base of a cylinder in terms of its volume $V$ given that the ratio of the radius to the height is $3pi$.
 
@@ -219,6 +246,81 @@ $(0, infinity)$
 == Range
 
 $(-infinity, infinity)$
+
+== Change of base
+
+$
+  log_b x = (log_k x) / (log_k b)
+$
+
+== Product rule
+
+$
+  log_b (M dot N) = log_b M + log_b N
+$
+
+== Quotient rule
+
+$
+  log_b (M/N) = log_b M - log_b N
+$
+
+== Power rule
+
+$
+  log_b (M^k) = k dot log_b M
+$
+
+
+== Solving equations using logarithms
+
+#exercises
+
+- Find $x$ if $8^(2-x) = 3^(x slash 2)$, rounded to 3 decimal places.
+
+$
+  8^(2-x) &= 3^(x slash 2)\
+  log_3 8^(2-x) &= log_3 3^(x slash 2)\
+  log_3 8^(2 -x) &= x/2\
+  2 dot (log_8 8^2-x)/(log_8 3)  &= x\
+  2(2 - x) &= log_8 3 dot x\
+  4 - 2x &= log_8 3 dot x\
+  4/(log 8_3 + 2) &= x\
+  x &approx 1.582\
+$
+
+Or using the power rule:
+
+$
+  8^(2-x) &= 3^(x slash 2)\
+  log_8 8^(2 - x) &= log_8 3^(x slash 2)\
+  2 - x &= x / 2 dot log_8 3\
+  2/(1/2 dot log_8 3 + 1) &= x\
+  x &approx 1.582\
+
+$
+
+- Find $z$ to three decimal places if $6^(4z - 1) = 5^z$.
+
+$
+  6^(4z - 1) &= 5^z\
+  log_6 6^(4z - 1) &= log_6 5^z\
+  4z - 1 &= z dot log_6 5\
+  (4 - log_6 5)z &= 1\
+  z &= 1/(4 - log_6 5)
+$
+
+- Expressed in natural logarithms, find the value of $x$ if $8^(2x) = 10^(x-7)$.
+
+$
+  8^(2x) &= 10^(x-7)\
+  ln 8^(2x) &= ln 10^(x-7)\
+  2x dot ln 8 &= (x-7) dot ln 10\
+  2x dot ln 8 &= x ln 10 - 7 ln 10\
+  x dot (2ln 8 - ln 10) &= -7 ln 10\
+  x &= (-7 ln 10)/(2ln 8 - ln 10)\
+  x &= (-7 ln 10)/ln(32/5)
+$
 
 = Falling objects
 
@@ -303,7 +405,7 @@ $
 - Slope-intercept form: $y = m x + b$
   - In this form, the slope is $m$ and the y-intercept is $b$
 
-=== Exercises
+  #exercises
 
 - Find the equation of the line that passes through the point $(1, 3)$ and is parallel to the line passing through the points $(1, -3)$ and $(-1, 7)$.
 
@@ -376,7 +478,7 @@ The *range* is, for upward opening parabolas, assuming vertex form: $y = a(x - h
   $(x - r)$ is a factor of a polynomial $p(x)$ if and only if the root $x = r$ is also a root of $p(x)$.
 ]
 
-=== Exercises
+#exercises
 
 - The polynomial $-5x^4 + 8x^3 + 29x^2 - 20x - 12$ can be expressed as $-(x-1)(x-3) dot P(x)$. Find $P(x)$.
 
@@ -555,7 +657,7 @@ Result: $x^2 - x + 1$
 
 == Polynomial long division
 
-=== Exercises
+#exercises
 
 - What is the remainder of $3x^2 - 2x^2 - 18x - 1$ divided by $3x^2 -8x - 2$?
 
@@ -616,7 +718,7 @@ The rational roots theorem (a.k.a. rational zeros theorem) gives the rational ro
 
 That means every root must take the form $plus.minus "factor of the constant term"/"factor of the leading coefficient"$.
 
-=== Exercises
+#exercises
 
 - For the polynomial $f(x) = 3x^8 - 18x^2 - 33x -18$, how many potential roots are given by the rational roots theorem?
 
@@ -823,7 +925,7 @@ $
   1/((x-1)(3x-2)) = 1/(x-1) - 3/(3x-2)
 $
 
-=== Exercises
+#exercises
 
 1. Decompose ~ $display((44x+48)/((x+6)(x-3)(x+2)))$
 
@@ -893,7 +995,7 @@ To get the horizontal asymptotes, first take the *dominant term*. It's the leadi
 
 Then, divide every term in both numerator and denominator by the dominant term, and evaluate at $x -> infinity$.
 
-=== Exercises
+#exercises
 
 - Determine the horizontal asymptote of $f(x) = (x^3 +2x+1)/(x^2-x-12)$
 
@@ -931,7 +1033,7 @@ As $x-> infinity$, this becomes $3/2$. The horizontal asymptote is $y = 3/2$.
 2. Cancel out common factors.
 3. Set the denominator equal to zero and solve for $x$.
 
-=== Exercises
+#exercises
 
 - Vertical asymptotes of $(4x)/(2x^3 + 5x^2 + 2x)$?
 
@@ -967,7 +1069,7 @@ $
 
 All the values where the radicand $> 0$ for even degrees, $(- infinity, infinity)$ for odd degrees.
 
-=== Exercises
+#exercises
 
 1. Domain of $d(x) = root(7, -2x + 1/2) + 1$?
 
@@ -979,7 +1081,7 @@ $
 
 First factor numerator and denominator, then cancel out common factors, then set the numerator to zero and solve.
 
-==== Exercises
+#exercises
 
 1. Solve $f(t) = 0$ where $display(f(t) = (7t^2 + 14)/(t^2 - 25))$.
 
@@ -1144,17 +1246,15 @@ $
 
 = Trigonometry
 
-== Unit circle
-
-=== Reference angle
+== Reference angle in the unit circle
 
 The _reference angle_ of an angle is the smallest angle between the terminal side of the angle and the x-axis. It is always a positive angle less than or equal to 90 degrees.
 
-=== Pythagorean identity in the first quadrant
+== Pythagorean identity in the first quadrant
 
 In the first quadrant, any point $(x, y)$ forms a right triangle with the origin, where $x$ and $y$ are the lengths of the legs and $sqrt(x^2 + y^2)$ is the length of the hypotenuse. Since in the unit circle, the length of the hypotenuse is 1, by definition, the Pythagorean identity states that $x^2 + y^2 = 1$.
 
-==== Exercises
+#exercises
 
 1. For a point in the first quadrant with $y = sqrt(5)/3$, find its $x$ coordinate.
 
@@ -1180,7 +1280,7 @@ $
   x &= sqrt(7)/3
 $
 
-=== Pythagorean trigonometric identity
+== Pythagorean trigonometric identity
 
 In the unit circle, since for any central angle $x = cos theta$ and $y = sin theta$.
 
@@ -1193,7 +1293,7 @@ $
 
 This is the *Pythagorean trigonometric identity*. It works in all quadrants.
 
-==== Exercises
+#exercises
 
 1. Point $P$ on the unit circle with $x = 2/5$. Find $sin theta$.
 
@@ -1285,17 +1385,17 @@ $
   cot theta &= sqrt(11)/5\
 $
 
-=== Quadrantal angles
+== Quadrantal angles
 
 Quadrantal angles are angles that are multiples of $90 degree$. For example, $0 degree$, $90 degree$, $180 degree$, $270 degree$, and $360 degree$ are all quadrantal angles. They lie on an axis.
 
 They are useful to find the values of trigonometric functions. Just remember that for points on the unit circle, $cos theta = x$ and $sin theta = y$.
 
-The corresponding angles on $[0, 360 degree]$ are $0$, $pi / 2$, $pi$, $3pi / 2$, $2pi$.
+The corresponding angles on $[0, 360 degree]$ are $0$, $pi / 2$, $pi$, $(3pi) / 2$, $2pi$.
 
 Example: $cos 0 + sin (pi / 2) = 1 + 1 = 2$
 
-==== Examples
+#exercises
 
 - Find the value of $tan(180 degree) + cot(270 degree)$
 
@@ -1330,7 +1430,7 @@ $
 
 For obtuse angles, the same formula works, but it will always give acute angles. To find an obtuse angle, subtract the acute angle from $180degree$.
 
-=== Exercises
+#exercises
 
 - Find $a$ if $A = 70degree$, $B = 35degree$, $b = 12$.
 
@@ -1381,11 +1481,33 @@ $
 
 See, $sin A = cos C$ and $sin C = cos A$.
 
-= Calculus
+If $m angle A = theta$, since $A$ and $C$ are complementary, $m angle C = 90 degree - theta$. It follows that
 
-== Limits
+$
+  sin theta &= cos(90 degree - theta)\
+  cos theta &= sin(90 degree - theta)\
+$
 
-=== Limits of logarithmic functions
+Sine and cosine are *cofunctions*.
+
+It also follows that:
+
+$
+  sec theta &= csc(90 degree - theta)\
+  csc theta &= sec(90 degree - theta)\
+  tan theta &= cot(90 degree - theta)\
+$
+
+== Addition formulas
+
+$
+  sin(x + h) &= sin(x)cos(h) + cos(x)sin(h)\
+  cos(x+h) &= cos(x)cos(h) + sin(h)sin(x)\
+$
+
+= Limits
+
+== Limits of logarithmic functions
 
 For any real $n$:
 
@@ -1393,7 +1515,7 @@ $lim_(x -> n) log(x) = log(x)$
 
 For infinity, remember the domain and apply transformations.
 
-=== Limits of reciprocal functions
+== Limits of reciprocal functions
 
 Remember, reciprocal functions have the form $f(x) = 1/x$. The limit of a reciprocal function as $x$ approaches infinity is always zero.
 
@@ -1413,15 +1535,15 @@ But for $lim(x -> 0)$, we have to consider the degree of the leading term of $P(
 - Any function of the form $y = 1/(x^n)$ where $n$ is odd has the same shape as $y = 1/x$. There is no limit at $x = 0$ because left and right limit are not the same.
 - Any function of the form $y = 1/(x^n)$ where $n$ is even has the same shape as $y = 1/x^2$. There is a limit, since the function will approach $infinity$ or $-infinity$.
 
-== Differentiation
+= Differentiation
 
-=== Constant multiple rule
+== Constant multiple rule for differentiation
 
 $
   d/(d x) (k f(x)) = k d/(d x) (f(x))
 $
 
-=== Sum rule
+== Sum rule for differentiation
 
 $
   d/(d x) (u(x) + v(x)) = (d u)/(d x) + (d v)/(d x)
@@ -1435,13 +1557,13 @@ $
   &= 2x + 1
 $
 
-=== The power rule
+== The power rule for differentiation
 
 Given a monomial $f(x) = x^n$, where $n$ is a real number,
 
 $f'(x) = n x^(n-1)$
 
-==== Exercises
+#exercises
 
 1. Calculate $(d y)/(d x)$ for $y = 2x - sqrt(x)$
 
@@ -1472,7 +1594,7 @@ f'(x) &= d/(d x) 8 sqrt(x) \
 &= 4/sqrt(x)
 $
 
-=== Exponential function
+== Differentiating exponential functions
 
 When the base is $e$:
 
@@ -1488,7 +1610,7 @@ $
   d/(d x) a^x = a^x ln(a)
 $
 
-==== Exercises
+#exercises
 
 - Find the slope of the tangent to $f(x) = 5^x +2e^x - ln 2$ at $x = 1$.
 
@@ -1496,9 +1618,43 @@ $
   d/(d x) space 5^x + 2e^x - ln 2 &= 5^x ln 5 + 2e^x
 $
 
-Evaluating at $x=1$, we get $5 ln 5 + 2e$
+Evaluating at $x=1$, we get $5 ln 5 + 2e$.
 
-=== Rate of change
+== Differentiating trigonometric functions
+
+#table(
+  columns: (5em, 5em),
+  align: horizon,
+  inset: 10pt,
+  table.header($f(x)$, $f'(x)$),
+  $sin x$, $cos x$,
+  $cos x$, $-sin x$,
+  $tan x$, $sec^2 x$,
+)
+
+#exercises
+
+- Find $f'(x)$ for $f(x) = 4 cos x - 5x^2 + 8$.
+
+$
+  d/(d x) 4 cos x - 5x^2 + 8 &= -4 sin x - 10x
+$
+
+- Find $f'(x)$ for $f(x) = sin x + 2 cos x$.
+
+$
+  d/(d x) sin x + 2 cos x = cos x - 2 sin x
+$
+
+- Find the derivative of $y = sqrt(x) + tan x$.
+
+$
+  d/(d x) sqrt(x) + tan x &= 1/2 x^(-1/2) + sec^2 x\
+  &= 1/(2sqrt(x)) + sec^2 x\
+  &= (1 + 2 sqrt(x) sec^2 x)/(2sqrt(x))\
+$
+
+== Rate of change
 
 Average rate of change on an interval $[a, a + h]$:
 
@@ -1512,7 +1668,7 @@ $
   f'(a) = lim_(h -> 0) (f(a+h) - f(a)) /h
 $
 
-==== Exercises
+#exercises
 
 1. Given that $f(x) = x^2$, what is $f'(2)$ according to the definition?
 
@@ -1524,13 +1680,13 @@ $
   &= 4
 $
 
-=== Slope of a tangent line
+== Slope of a tangent line
 
 The derivative of a function $f(x)$ at a point $x = a$ is the slope of the tangent line to the graph of $f(x)$ at that point.
 
 So to find the slope of the tangent line at a point $(x_1, y_1)$, we evaluate $f'(x_1)$.
 
-==== Exercises
+#exercises
 
 - Find the slope of the tangent to $y = 5x^7 - 3x^5 + 10x^3$ at the point where $x = 1$.
 
@@ -1570,13 +1726,13 @@ $
   x &= 3
 $
 
-=== Finding the equation of a tangent line at a point
+== Finding the equation of a tangent line at a point
 
 - Find the derivative.
 - Evaluate the derivative at the given $x$. That is the slope.
 - Replace the slope, the $x$ and $y$ coordinates we are interested in in the point-slope form of the equation: $y - y_1 = m(x - x_1)$.
 
-==== Exercises
+#exercises
 
 - Find the equation of the tangent to the curve $y = x^2 + 5x$ at the point $(-1, -4)$.
 
@@ -1652,9 +1808,9 @@ $
   x &= 2
 $
 
-== Integration
+= Integration
 
-=== The antiderivative
+== The antiderivative
 
 The antiderivative is the opposite of the derivative.
 
@@ -1676,13 +1832,13 @@ These integrals are *indefinite integrals*.
 
 The function being integrated (here $2x$) is called the *integrand*.
 
-=== The power rule for integration
+== The power rule for integration
 
 $
   integral x^n space d x = (x^(n+1))/(n+1) + C
 $
 
-==== Exercises
+#exercises
 
 1. Antiderivative of $display(1/x^4)$?
 
@@ -1717,7 +1873,7 @@ $
                     &= (z^2)/10 + C
 $
 
-=== The constant factor rule for indefinite integrals
+== The constant factor rule for indefinite integrals
 
 To take the integral of a power function with a constant factor, like $5x^2$, we can take the constant factor out of the integral:
 
@@ -1733,7 +1889,7 @@ $
 
 Where $k$ is a *constant*. It does not work if $k$ is a variable.
 
-==== Exercises
+#exercises
 
 1. Calculate $integral 1/(2y^5) d y$
 
@@ -1762,7 +1918,7 @@ $
   &= (pi z)/2 + C
 $
 
-=== The sum rule for indefinite integrals
+== The sum rule for indefinite integrals
 
 To take the integral of a sum, you can take the sum of the integrals of each term:
 
@@ -1776,7 +1932,7 @@ $
   integral (k_1 f(x) plus k_2 g(x)) space d x = k_1 integral f(x) space d x plus k_2 integral g(x) space d x
 $
 
-==== Exercises
+#exercises
 
 - Calculate $integral sqrt(x)(2+x) space d x$
 
@@ -1815,7 +1971,7 @@ $
   &= z^4/4 + z^2 - z + C
 $
 
-=== Integrating reciprocal functions
+== Integrating reciprocal functions
 
 Since $d/(d x) (ln x) = 1/x$ for $x > 0$, we can generalize to $x ≠ 0$ by using an absolute value:
 
@@ -1832,7 +1988,7 @@ $
   integral 1/x space d x = ln |x| + C
 $
 
-=== Integrating exponential functions
+== Integrating exponential functions
 
 Since $d/(d x) e^x = e^x$, and integration is the inverse of differentiation:
 
@@ -1846,7 +2002,7 @@ $
   integral a^x space d x = (a^x)/ln(a) + C
 $
 
-==== Exercises
+#exercises
 
 - Calculate $integral (1/8)^x d x$.
 
@@ -1884,7 +2040,7 @@ $
   |bold(a) + bold(b)|^2 = |bold(a)^2| + |bold(b)^2| - 2|bold(a)||bold(b)|cos theta
 $
 
-=== Exercises
+#exercises
 
 - In rectangle $A B C D$, $A B = 5$ and $B C = sqrt(39)$. Find $|accent(B D, arrow)|$.
 
