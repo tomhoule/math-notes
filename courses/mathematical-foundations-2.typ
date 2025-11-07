@@ -7,6 +7,8 @@
 // #set text(font: "Source Sans Pro")
 // #show math.equation: set text(font: "STIX Two Math")
 
+#set page(paper: "a4", margin: (x: 4.4cm, y: 1.8cm))
+
 #set text(font: "STIX Two Text")
 #show math.equation: set text(font: "STIX Two Math")
 
@@ -47,7 +49,7 @@
 }
 
 #align(right)[
-  #text(size: 10em)[
+  #text(size: 8em)[
     #smallcaps[
       Notes
     ]
@@ -217,9 +219,7 @@ Now the circumference is $2 pi r = 2 pi (5) = 10 pi$
 
 == Triangles
 
-=== Surface
-
-The formula for the area of a triangle from one angle $C$ and its two adjacent sides $a$ and $b$ is:
+The formula for the *area of a triangle* from one angle $C$ and its two adjacent sides $a$ and $b$ is:
 
 $
   1/2 a b sin C
@@ -227,11 +227,11 @@ $
 
 $C$ is called the *included angle*.
 
-== Polygons
+== Sum of the interior angles of a polygons
 
 The sum of the interior angles of a polygon is always $180 * (n-2)$ where $n$ is the number of sides.
 
-=== Regular polygons
+== Regular polygons
 
 With $n$ as the number of sides, exterior angles are given by:
 
@@ -1077,7 +1077,7 @@ $
   -2x + 1/2 >
 $
 
-=== Roots of rational functions
+== Roots of rational functions
 
 First factor numerator and denominator, then cancel out common factors, then set the numerator to zero and solve.
 
@@ -1179,7 +1179,7 @@ $
 
 If we are given one root of a cubic equation, we can use synthetic division to factor it.
 
-=== Example
+#exercises
 
 Given that $(x - 3)$ is a factor of $f(x) = x^3 + x^2 - 4x - 24$, sketch the curve of $y = f(x)$.
 
@@ -1505,6 +1505,14 @@ $
   cos(x+h) &= cos(x)cos(h) + sin(h)sin(x)\
 $
 
+== Horizontal stretches of graphs of trigonometric functions
+
+If you multiply the argument of $sin(x)$ by some factor $B$, the resulting function $y = sin(B x)$ is a horizontal scaling of the graph by a factor $1/B$. It's a horizontal stretch if $1/B > 1$, and a horizontal shrink if $0 < 1/B < 1$.
+
+The period becomes $1/B dot 2pi$.
+
+The graph of tangent functions works the same way, except that you have to pay attention to the period being $pi$, not $2pi$.
+
 = Limits
 
 == Limits of logarithmic functions
@@ -1622,7 +1630,7 @@ Evaluating at $x=1$, we get $5 ln 5 + 2e$.
 
 == Differentiating trigonometric functions
 
-#table(
+#align(center, table(
   columns: (5em, 5em),
   align: horizon,
   inset: 10pt,
@@ -1630,7 +1638,7 @@ Evaluating at $x=1$, we get $5 ln 5 + 2e$.
   $sin x$, $cos x$,
   $cos x$, $-sin x$,
   $tan x$, $sec^2 x$,
-)
+))
 
 #exercises
 
@@ -2024,6 +2032,293 @@ $
   -(frac(1, 8, style: "vertical"))^x / (ln 8) + C
 $
 
+== Chain Rule for Differentiation
+
+The derivative of $f(g(x))$ is:
+
+$
+  (d f)/(d x) = (d f)/(d g) dot (d g)/(d x)
+$
+
+For example, to differentiate $(1 + 2x)^3$, decompose it into: $g(x) = 1 + 2x$ and $f(g) = g^3$.
+
+Then it follows:
+
+$
+  (d f)/(d x) (1 + 2x)^3 &= (d f)/(d g) g^3 dot (d g)/(d x) (1 + 2x)\
+  &= 3g^2 dot 2\
+  &= 6g^2
+$
+
+We now substitute $g(x) = 1 + 2x$ and get:
+
+$
+  (d f)/(d x) = 6 dot (1+2x)^2 = 4x^2 + 24x + 6
+$
+
+#exercises
+
+- Differentiate $f(x) = (2x^3 - x)^3$:
+
+Decomposing $f$ into $f compose g$, we have $g(x) = 2x^3 - x$ and $f(x) = g^3$.
+
+First take $(d g)/(d x) = 6x^2 - 1$.
+
+Then $(d f)/(d g) = 3g^2$.
+
+Substituting $g$: $(d f)/(d x) = 3(2x^3 - x)^2 dot (6x^2 - 1)$.
+
+- Given $f(x) = (7 - 3x)^2$, find the equation of the tangent at point $(3, 4)$.
+
+We can decompose $f(x)$ into $f(x) = g^2$ and $g(x) = 7-3x$.
+
+We differentiate to $f'(x) = 2g$ and $g'(x) = -3$.
+
+Using the chain rule, we have $(d f)/(d x) = 2(7-3x) dot -3 = 18x -42$.
+
+To find the slope of the tangent, we substitute 3 for $x$: $18*3 - 42 = 12$.
+
+With the slope and the point, we can use the point-slope form to find the equation:
+
+$
+  y - 4 &= 12(x - 3)\
+  y &= 12x -32
+$
+
+- Given $f(x) = (-2x + 9)^3$, find the slope at $(4,1)$.
+
+First decompose: $f(x) = g^3, space g(x) = -2x + 9$.
+
+Then differentiate:
+
+$
+  f'(g) = 3g^2\
+  g'(x) = -2\
+$
+
+Using the chain rule, we have:
+
+$
+  (d f)/(d x) &= 3g^2 dot -2\
+  &= -6(-2x + 9)^2
+$
+
+Now evaluating at our point, we have a slope of:
+
+$
+  -6 dot (-2 dot 4 + 9)^2 = -6
+$
+
+In the point slope form:
+
+$
+  y - 1 &= -6(x - 4)\
+  y &= -6x + 25
+$
+
+- Find $(d f)/(d x)$ if $f(x) = (3 - 5x)^4$.
+
+First decompose, then differentiate.
+
+$
+  g(x) &= 3 - 5x\
+  f(g) &= g^4
+  \
+  \
+  g'(x) &= -5\
+  f'(x) &= 4g^3
+$
+
+Then use the chain rule:
+
+$
+  (d f)/(d x) &= 4g^3 dot -5\
+  &= -20(3 - 5x)^3
+$
+
+- Given $f(x) = (2x + 1)^5$, find the equation of the tangent at $(-1, -1)$.
+
+Decompose and differentiate:
+
+$
+  g(x) &= 2x + 1
+  f(g) &= g^5\
+  \
+  g'(x) &= 2\
+  f'(x) &= 5g^4
+$
+
+Chain rule:
+
+$
+  (d f)/(d x) = 5g^4 dot 2 = 10(2x + 1)^2
+$
+
+At $x = -1$, the slope is $10(-2 + 1)^2 = 10(-1)^2 = 10$.
+
+Now point slope form:
+
+$
+  y + 1 &= 10(x + 1)\
+  y &= 10x + 10 - 1\
+  y &= 10x + 9
+$
+
+- Find $(d y)/(d x)$ for $y = -1/sqrt(x^2 - 6x)$.
+
+First decompose and differentiate:
+
+$
+  g(x) &= x^2 - 6x\
+  f(g) &= -1 dot g^(-1 slash 2)\
+  \
+  g'(x) &= 2x - 6\
+  f'(g) &= 1/2 dot g^(-3 slash 2)
+$
+
+Using the chain rule:
+
+$
+  (d f)/(d x) &= (g^(-3 slash 2))/2 dot (2x - 6)\
+              &= (2x - 6)/(2 sqrt((x^2 - 6x)^3))\
+              &= (x - 3)/sqrt((x^2 - 6x)^3)
+$
+
+- Find $(d y)/(d x)$ for $y = sqrt(x^2 - 4x)$.
+
+First decompose and differentiate:
+
+$
+  g(x) &= x^2 - 4x\
+  f(g) &= sqrt(g)\
+  \
+  g'(x) &= 2x - 4\
+  f'(g) &= 1/(2 sqrt(g))
+$
+
+Then use the chain rule:
+
+$
+  (d y)/(d x) &= 1/(2 sqrt(x^2 - 4x)) dot (2x - 4)\
+  &= (x - 2)/sqrt(x^2 - 4x)
+$
+
+- Given that $y = sqrt(3 - 6x)$, find $(d y)/(d x)$.
+
+First, decompose and differentiate:
+
+$
+  g(x) &= 3 - 6x \
+  f(g) &= sqrt(g)\
+  \
+  g'(x) &= -6\
+  f'(g) &= 1/(2 sqrt(g))\
+$
+
+Then use the chain rule:
+
+$
+  (d f)/(d x) &= 1/(2 sqrt(3- 6x)) dot -6\
+  &= -3/sqrt(3- 6x)
+$
+
+- Find the slope of the tangent at $x = -1$ for $y = sqrt(3x + 7)$.
+
+Decompose and differentiate:
+
+$
+  g(x) &= 3x + 7\
+  f(g) &= sqrt(g)\
+  \
+  g'(x) &= 3\
+  f'(g) &= 1/(2sqrt(g))\
+$
+
+Then chain rule:
+
+$
+  (d f)/(d x) &= 1/(2 sqrt(3x + 7)) dot 3\
+  &= 3/(2 sqrt(3x + 7))
+$
+
+Now plug in $x = -1$:
+
+$
+  3/(2 sqrt(-3 + 7)) &= 3/4
+$
+
+- Find the slope of the tangent to $y = sqrt(x - 3) + 3x^3$ at the point where $x = 4$.
+
+To find the slope of the tangent at a point, we need to evaluate the derivative at that point.
+
+First, use the sum rule:
+
+$
+  d/(d y) &= (d x)/(d y) sqrt(x - 3) + (d x)/(d y) 3x^3 \
+  &= ((d x)/(d y) sqrt(x - 3)) + 9x^2 \
+$
+
+Then the chain rule on the first term. Decompose and differentiate:
+
+$
+  g(x) &= x-3\
+  f(g) &= sqrt(g)\
+  \
+  g'(x) &= 1\
+  f'(x) &= 1/(2 sqrt(g))\
+$
+
+Now chain rule:
+
+$
+  (d x)/(d y) &= 1/(2 sqrt(x - 3)) dot 1 + 9x^2\
+  &= 1/(2 sqrt(x-3)) + 9x^2
+$
+
+Now evaluate at $x = 4$:
+
+$
+  1/(2 sqrt(1)) + 9 dot 16 = 289/2
+$
+
+- Given $f(x) = (x - 3x^4)^6$, find $f'(x)$:
+
+First, decompose and differentiate:
+
+$
+  g(x) &= x - 3x^4\
+  f(g) &= g^6\
+  \
+  g'(x) &= 1 - 12x^3\
+  f'(x) &= 6g^5\
+$
+
+Then chain rule:
+
+$
+  f'(x) &= 6g^5 dot (1 - 12x^3)\
+  &= 6(x - 3x^4)^5 dot (1 - 12x^3)\
+$
+
+- Find $f'(x)$ for $f(x) = 3/sqrt(2x + 1)$.
+
+First decompose and differentiate:
+
+$
+  g(x) &= 2x + 1\
+  f(g) &= 3 dot g^(-1 slash 2)\
+  \
+  g'(x) &= 2\
+  f'(g) &= -3/(2 sqrt(g^3))
+$
+
+Now chain rule:
+
+$
+  f'(x) &= -3/(2 sqrt((2x + 1)^3)) dot 2\
+  &= -3/sqrt((2x + 1)^3)
+$
+
 = Vectors
 
 == Magnitude
@@ -2071,3 +2366,37 @@ For any vector $bold(a)$, you can divide it by its magnitude to get a unit vecto
 $
   bold(u) = bold(a)/bold(|a|)
 $
+
+== Linear combinations
+
+A linear combination of two vectors is a sum of multiples of the two vectors: $lambda_1 bold(a) + lambda_2 bold(b)$
+
+If $bold(a)$ and $bold(b)$ are #underline([*not*]) parallel, their linear combinations are all unique, that is to say:
+
+$
+  forall space lambda_1, lambda_2, lambda_3, lambda_4, space
+  lambda_1 bold(a) + lambda_2 bold(b) = lambda_3 bold(a) + lambda_4 bold(b)
+  <=> (lambda_1 = lambda_3 and lambda_2 = lambda_4)
+$
+
+#exercises
+
+- Given $bold(a) cancel(parallel) bold(b)$, find $lambda$ and $mu$ given $2bold(a) + 9bold(b) = (lambda - mu)bold(a) + (2lambda + 3mu)bold(b)$.
+
+Since the vectors are not colinear, the coefficients must be equal, so we have:
+
+$
+  cases(2 = lambda - mu, 9 = 2lambda + 3mu)
+$
+
+Multiplying the first equation by 2, then subtracting, we get:
+
+$
+  &cases(4 = 2lambda - 2mu, 9 = 2lambda + 3mu)\
+  &4-9 = -2mu - 3mu\
+  &-5 = -5mu\
+  &mu = 1
+$
+
+Now substitute $mu = 1$:
+$ 2 &= lambda - 1\ lambda &= 3 $
