@@ -48,6 +48,10 @@
   text(weight: "regular", smallcaps(this.body))
 }
 
+#let der(top, bottom) = $(upright(d) #top)/(upright(d) #bottom)$
+#let dern(n, top, bottom) = $(upright(d)^(#n)#top)/(upright(d)#bottom^(#n))$
+#let sndder(top, bottom) = dern(2, top, bottom)
+
 #align(right)[
   #text(size: 8em)[
     #smallcaps[
@@ -1816,6 +1820,84 @@ $
   x &= 2
 $
 
+== The second derivative
+
+It's the derivative of the derivative, denoted $f''(x)$:
+
+$
+  f''(x) = (f'(x))'
+$
+
+Or in Leibniz notation:
+
+$
+  f''(x) = #sndder("", $x$) = #der($$, $x$) (#der($f$, $x$))
+$
+
+The third derivative and the following work the same way. They are denoted:
+
+$
+  f^((n))(x) = #dern($n$, $$, $x$) f(x)
+$
+
+The parenthesis on the superscript is intentional, to distinguish the $n$-th derivative from the $n$-th power of $f$.
+
+#exercises
+
+- Find $f''(x)$ for $f(x) = 2x^3 + 1/x$.
+
+First derivative: $6x^2 - 1/x^2$.
+
+Second derivative: $12x  + 2/(x^(3))$
+
+- Find $f''(x)$ for $f(x) = 14x - 2/x + 4sqrt(x)$.
+
+First derivative: $14 +2x^(-2) + 2/(sqrt(x))$
+
+Second derivative: $-4x^(-3) - 1/(sqrt(x^3))$
+
+- Find $f''(x)$ for $f(x) = 4/x - 3 root(3, x)$.
+
+First derivative: $-4x^(-2) - x^(-2 slash 3)$.
+
+Second derivative: $8x^(-3) + 2/3 x^(-5 slash 3)$
+
+- Calculate $(d^2 y)/(d x^2)$ for $y = 4/sqrt(x) + 2 sin x$.
+
+First derivative: $4 dot -1/2 dot x^(-3/2) + 2 cos x = -2x^(-3/2) + 2 cos x$.
+
+Second derivative: $-2 dot -3/2 dot x^(-5/2) - 2 sin x = 3x^(-5/2) - 2 sin x $
+
+- Calculate #sndder("y", "x") for $y = -3sin x + 5x^3 - 19$.
+
+$
+  #der("y", "x") (-3sin x + 5x^3 - 19) &= -3cos x + 15x^2\
+  #sndder("y", "x") &= #der("", "x") (-3cos x + 15x^2)\
+  &= 3sin x + 30x
+$
+
+- Find $f^((4))(-2)$ for $f(x) = 3x^4 - 2x^2 - 4/x$.
+
+$
+  #der($$, $x$) &= 12x^3 - 4x + 4x^(-2)\
+  #dern(2, $$, $x$) &= 36x^2 - 4 - 8x^(-3)\
+  #dern(3, $$, $x$) &= 72x + 24x^(-4)\
+  #dern(4, $$, $x$) &= -96x^(-5) + 72\
+$
+
+Evaluating at $x = -2$, we get 75.
+
+- Given $f(x) = (5 - x^4)/(6x^2)$, find $f'''(x)$.
+
+$
+  f(x) &= (5-x^4)/(6x^2)\
+  &= 5/(6x^2) - x^4/(6x^2)\
+  &= 5/6 x^(-2) - 1/6 x^2\
+  #der($f$, $x$) &= -5/3 x^(-3) - 1/3 x\
+  #dern(2, $f$, $x$) &= 5x^(-4) - 1/3\
+  #dern(3, $f$, $x$) &= -20x^(-5)\
+$
+
 = Integration
 
 == The antiderivative
@@ -2400,3 +2482,55 @@ $
 
 Now substitute $mu = 1$:
 $ 2 &= lambda - 1\ lambda &= 3 $
+
+== Component vectors
+
+For a point $A$ on the cartesian plane, with $O$ as the origin.
+
+The vector $accent(O A, arrow) = bold(a)$ is called the *position vector* of $A$. A position vector always has its tail at origin.
+
+There are two special unit vectors on the cartesian plane: $bold(i)$ and $bold(j)$, with $|bold(i)| = |bold(j)| = 1$. On the plane, $bold(i)$ is a unit vector along the positive direction of the $x$-axis. $bold(j)$ is the same along the positive direction of the $y$-axis.
+
+In general, a point $A$ with coordinates $(a_1, a_2)$ has a position vector:
+
+$
+  accent(O A, arrow) = bold(a) = a_1 bold(i) + a_2 bold(j)
+$
+
+Alternatively, the position vector can be denoted using square bracket notation:
+
+#let posvec(i, j) = $chevron #i, #j chevron.r$
+
+$
+  2 bold(i) + 3 bold(j) = #posvec(2, 3)
+$
+
+With this notation, $bold(i) = posvec(1, 0)$ and $bold(j) = posvec(0, 1)$.
+
+There is also column vector notation:
+
+#set math.vec(delim: "[")
+
+$
+  2 bold(i) + 3 bold(j) = vec(2, 3)
+$
+
+So $bold(i) = vec( 1, 0)$ and $bold(j) = vec( 0, 1)$
+
+#exercises
+
+- Let $A(3, 4)$ and $B(2, -2)$. Find $accent(B A, arrow)$ in terms of $bold(i)$ and $bold(j)$.
+
+$
+  accent(B A, arrow) &= -accent(O B, arrow) + accent(O A, arrow)\
+  &= -2 bold(i) + 2bold(j) + 3bold(i) + 4bold(j)\
+  &= bold(i) + 6bold(j)
+$
+
+- Let $A(2, 4)$ and $B(-5, -1)$. Find $accent(B A, arrow)$.
+
+$
+  accent(B A, arrow) &= - accent(O B, arrow) + accent(O A, arrow)\
+  &= 5bold(i) + 1bold(j) + 2bold(i) + 4bold(j)\
+  &= 7bold(i) + 5bold(j)
+$
