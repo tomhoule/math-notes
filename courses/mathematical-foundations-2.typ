@@ -1,5 +1,5 @@
-#import "@preview/cetz:0.3.2"
-#import "@preview/cetz-plot:0.1.1"
+#import "@preview/cetz:0.4.2"
+#import "@preview/cetz-plot:0.1.3"
 
 // #set text(font: "IBM Plex Sans", size: 9pt)
 // #set text(font: "Noto Sans", size: 10.5pt)
@@ -40,7 +40,7 @@
 }
 
 #show heading.where(level: 2): this => {
-  block(text(weight: "medium", fill: accent-color, this.body), inset: (top: .4em, bottom: .4em))
+  block(text(weight: "medium", fill: accent-color, this.body), inset: (top: 1.4em, bottom: .4em))
 }
 
 #show heading.where(level: 3): this => {
@@ -1820,6 +1820,192 @@ $
   x &= 2
 $
 
+== Finding the equation of a normal line at a point
+
+$
+  y - y_1 = m(x - x_1), #h(2em) m = - 1/(f'(x_1))
+$
+
+Like for any normal line, the slope is the negative reciprocal of the tangent line.
+
+#exercises
+
+- Find the slope of the normal to $y = 2/x^5 + 7x$ at (1, 9).
+
+First take the derivative:
+
+$
+  #der($y$, $x$) &= 2 dot -5 dot x^(-6) + 7\
+  &= -10/(x^6) + 7
+$
+
+Evaluating at $x = 1$, we have:
+
+$
+  m = -10/(1^6) + 7 = -10 + 7 = -3
+$
+
+The slope of the tangent is -3. So the slope of the normal is $1/3$.
+
+- Find the slope of the normal to $y = x^2 + x$ at (1, 2).
+
+Take the derivative:
+
+$
+  #der($y$, $x$) &= 2x + 1
+$
+
+Evaluate at $x = 1$:
+
+$
+  m = 2 dot 1 + 1 = 3
+$
+
+The slope of the tangent is 3, so the slope of the normal is $-1/3$.
+
+- Find the slope of the normal to $y = 1/(4x^2) + x/2$ at $(-1/2, 3/4)$.
+
+$
+  #der($y$, $x$) &= 1/4 dot -2 dot x^(-3) + 1/2\
+  &= - 1/2 dot x^(-3) + 1/2 \
+  &= -1/(2x^3) + 1/2
+$
+
+Evaluating at $x = -1/2$:
+
+$
+  m &= -1/(2(-1/2)^3) + 1/2\
+  &= -1/(-1/4) + 1/2 \
+  &= -1 dot -4 + 1/2 \
+  &= 4 + 1/2 \
+  &= 9/2
+$
+
+That is the slope of the tangent. Therefore, the slope of the normal is $-2/9$.
+
+- The equation of the normal to the curve $y = sqrt(x) - x^2$ at $(1, 0)$ is given by $x + p y = q$ where $p$ and $q$ are constants. Find $q - p$.
+
+$
+  #der($y$, $x$) &= 1/(2 sqrt(x)) - 2x
+$
+
+Now the slope of the tangent at $x = 1$:
+
+$
+  m = 1/(2 sqrt(1)) - 2 dot 1 = 1/2 - 2 = -3/2
+$
+
+So the slope of the normal is $2/3$.
+
+Now substitute $x$, $y$ and the slope in point-slope form:
+
+$
+  y - 0 &= 2/3(x - 1)\
+  3/2 y &= x - 1\
+  x - 3/2 y &= 1
+$
+
+So $p = -3/2$, $q = 1$ and $q - p = 5/2$.
+
+- The equation of the normal to $y = 2x^3$ at $(2, 16)$ is given by $x + p y = q$ where $p$ and $q$ are constants. Find $q - p$.
+
+$
+  #der($y$, $x$) &= 6x^2
+$
+
+Slope of the tangent at $(2, 16)$:
+
+$
+  m = 6 dot 2^2 = 6 dot 4 = 24
+$
+
+The slope of the normal is $-1/24$.
+
+Now substitute in point slope form:
+
+$
+  y - 16 &= -1/24(x - 2)\
+  (y - 16) dot -24  &= x - 2\
+  -24y + 384 &= x - 2\
+  384 + 2 &= x
+  x + 24y &= 386\
+$
+
+So $q - p = 386 - 24 = 362$
+
+- Equation of the normal to $y = 4/x$ at $(1, 4)$.
+
+$
+  #der($y$, $x$) = 4 dot -1 dot x^(-2) = -4/x^2
+$
+
+Slope of the tangent at $x=1$:
+
+$
+  m = -4/1^2 = -4
+$
+
+$therefore$ the slope of the normal is $1/4$.
+
+Substituting in the point-slope equation:
+
+$
+  y - 4 &= 1/4 dot (x - 1)\
+  (y - 4) dot 4 &= x - 1\
+  4y - 16 &= x - 1\
+  x - 4y &= -15
+$
+
+- Find the $y$ intercept of the normal to $f(x) = 3x^2 -4x + 1$ at $(2, 5)$.
+
+$
+  f'(x) &= 6x - 4
+$
+
+So the slope of the tangent at $x = 2$ is:
+
+$
+  m = 6 dot 2 - 4 = 8
+$
+
+$therefore$ the slope of the normal is $-1/8$.
+
+Equation:
+
+$
+  y - 5 &= -1/8(x - 2)\
+  -8y + 40 &= x - 2\
+  -8y &= x - 42\
+  y &= -x/8 + 21/4\
+$
+
+To find the $y$ intercept, we set $x = 0$ and get $(0, 21/4)$.
+
+- Find the $y$ intercept of the normal to $y = 2/x^2 + 1/2$ at $(2, 1)$.
+
+$
+  #der($y$, $x$) &= 2 dot -2 dot x^(-3)\
+ &= -4/x^3
+$
+
+Slope of the tangent at $x = 2$:
+
+$
+  m = -4/(2^3) = -1/2
+$
+
+$therefore$ slope of the normal is $2$.
+
+Equation:
+
+$
+  y - 1 &= 2(x - 2)\
+  y &= 8x - 4 + 1\
+  y &= 8x - 3
+$
+
+Setting $x = 0$, we get $y &= -15$, so $(0, -15)$ is the $y$ intercept.
+
 == The second derivative
 
 It's the derivative of the derivative, denoted $f''(x)$:
@@ -1896,6 +2082,82 @@ $
   #der($f$, $x$) &= -5/3 x^(-3) - 1/3 x\
   #dern(2, $f$, $x$) &= 5x^(-4) - 1/3\
   #dern(3, $f$, $x$) &= -20x^(-5)\
+$
+
+== The product rule
+
+$
+  (u(x) dot v(x))' = u'(x) dot v(x) + u(x) dot v'(x)
+$
+
+Or in Leibniz notation:
+
+$
+  #der($y$, $x$) = #der($u$, $x$) dot v + u dot #der($v$, $x$)
+$
+
+Multiplying out, then deriving also works, but is sometimes harder or not possible.
+
+#exercises
+
+- Differentiate $x tan x$.
+
+$
+  #der("", $x$) x tan x &= 1 dot tan x + x dot sec^2 x\
+  &= tan x + x sec^2 x\
+$
+
+- Differentiate $sqrt(x) sin x$.
+
+$
+  #der("", $x$) sqrt(x) sin x &= 1/2 dot 1/sqrt(x) dot sin x + sqrt(x) cos x\
+  &= (sin x)/(2sqrt(x)) + sqrt(x) cos x\
+$
+
+- Differentiate $f(x) = x^2 e^x$.
+
+$
+  #der("", $x$) x^2 e^x &= 2x e^x + x^2 e^x\
+  &= x e^x (x + 2)\
+$
+
+- Differentiate $f(x) = (x^2 + 3)ln x$.
+
+$
+  #der("", $x$) (x^2 + 3)ln x &= 2x ln x + (x^2 + 3)1/x\
+  &= 2x ln x + x + 3/x\
+$
+
+- If a curve $cal(C)$ is given by $y = e^x cos x$, calculate the slope of the tangent line to the curve at the point where $x = 0$.
+
+First calculate the derivative:
+
+$
+  #der($y$, $x$) &= e^x dot (-sin x) + e^x dot cos x\
+  &= e^x (cos x - sin x)\
+$
+
+To get the slope, we evaluate this at $x = 0$:
+
+$
+  e^0 (cos 0 - sin 0) = 1(1 - 0) = 1
+$
+
+- If a curve $cal(C)$ is given by $y = (x + 2) cos x$, find the slope of the tangent at $x = pi/2$.
+
+First find the derivative:
+
+$
+  #der($y$, $x$) &= 1 dot cos x + (x + 2) dot (-sin x)\
+  &= cos x + -x sin x - 2 sin x
+$
+
+Now evaluate this at $x = pi/2$:
+
+$
+  &space space cos pi/2 - pi/2 sin pi/2 - 2 sin pi/2\
+  &= 0 - pi / 2 dot 1 - 2 dot 1\
+  &= -pi / 2 - 2
 $
 
 = Integration
