@@ -2225,51 +2225,6 @@ $
                     &= (z^2)/10 + C
 $
 
-== The constant factor rule for indefinite integrals
-
-To take the integral of a power function with a constant factor, like $5x^2$, we can take the constant factor out of the integral:
-
-$
-  integral 5x^2 d x = 5 dot integral x^2 d x
-$
-
-This is the *constant factor rule*. In general:
-
-$
-  integral k space f(x) space d x = k integral f(x) space d x
-$
-
-Where $k$ is a *constant*. It does not work if $k$ is a variable.
-
-#exercises
-
-1. Calculate $integral 1/(2y^5) d y$
-
-$
-  integral 1/(2y^5) d y &= 1/2 integral y^(-5) \
-  &= 1/2 dot y^(-5+1)/(-5+1) + C\
-  &= 1/2 dot y^(-4)/(-4) + C\
-  &= 1/2 dot -1/(4y^4) + C\
-  &= -1/(8y^4) + C
-$
-
-2. Calculate $integral 1/(3x^6) d x$
-
-$
-  integral 1/(3x^6) d x &= 1/3 dot integral x^(-6)\
-  &= 1/3 dot x^(-5)/(-5) + C\
-  &= 1/3 dot - 1/(5x^5) + C\
-  &= -1/(15x^5) + C
-$
-
-3. Calculate $integral pi/2 d z$
-
-$
-  integral pi/2 d z &= pi/2 integral z^0 d z\
-  &= pi/2 dot z + C\
-  &= (pi z)/2 + C
-$
-
 == The sum rule for indefinite integrals
 
 To take the integral of a sum, you can take the sum of the integrals of each term:
@@ -2661,6 +2616,209 @@ Now chain rule:
 $
   f'(x) &= -3/(2 sqrt((2x + 1)^3)) dot 2\
   &= -3/sqrt((2x + 1)^3)
+$
+
+- Calculate $f'(x)$ if $f(x) = 5e^(4x)$
+
+$
+  g(x) &= 4x\
+  f(g) &= 5e^(g)\
+  g'(x) &= 4\
+  f'(g) &= 5e^g\
+  therefore\
+  f'(x) &= 20e^(4x)
+$
+
+- Find the equation of the tangent to $y = 5e^(4x)$ at $x = 1/4$.
+
+$
+  u &= 4x\
+  f &= 5e^(u)\
+  #der($u$, $x$) &= 4\
+  #der($f$, $u$) &= 5e^u\
+  #der($f$, "x") &= 5e^(u) dot 4\
+  &= 20e^(4x)
+$
+
+Now evaluate it at $x = 1/4$ to find the slope:
+
+$
+  m = 20e^1 &= 20e
+$
+
+This is the slope. We can evaluate the equation at $x = 1/4$ to get $y$: it's $5e$. Now we find the equation of the tangent, given the slope and one point:
+
+$
+  y - 5e &= 20e(x - 1/4)\
+  y &= 20e x - 5e + 4e \
+  y &= 20 e x
+$
+
+- Find the slope of the tangent to $y = -7e^(2x) + 3x$ at $x = 1$.
+
+Let's take the derivative of the first term:
+
+$
+  u &= 2x\
+  f &= -7e^u\
+  #der($u$, $x$) &= 2\
+  #der($f$, $u$) &= -7e^u\
+  #der($f$, $x$) &= (-7e^(2x)) dot 2\
+  &= -14e^(2x)
+$
+
+The slope at $x = 1$ is:
+
+$
+  m = -14e^2 + 3
+$
+
+- Find the equation of the tangent to $y = e^(2x - 1)$ at $x=1$.
+
+$
+  u &= 2x - 1\
+  f &= e^u\
+  #der($u$, $x$) &= 2\
+  #der($f$, $u$) &= e^u\
+  #der($f$,$x$) &= 2e^(2x - 1)\
+$
+
+Evaluating this at $x = 1$:
+
+$
+  2e^1 &= 2e
+$
+
+That is the slope.
+
+And $y = e^(2 - 1) = e$.
+
+Now the equation:
+
+$
+  y - e &= 2e(x - 1)\
+  y &= 2e x -e
+$
+
+- Find the slope of the tangent to the curve $y = e^(x^5)$ at the point where $x = -1$.
+
+$
+  u &= x^5\
+  f &= e^u\
+  #der($u$, $x$) &= 5x^4\
+  #der($f$, $u$) &= e^u\
+  #der($f$, $x$) &= e^(x^5) dot 5x^4\
+  &= 5x^4e^(x^5)
+$
+
+To find the slope, we evaluate the derivative at $x = -1$:
+
+$
+  m &= 5 dot (-1)^4 dot e^((-1)^(5))\
+  &= 5e^(-1)\
+  &= 5/e
+$
+
+- Find $f'(x)$ for $f(x) = e^(3-2x^5)$.
+
+$
+  #der($u$, $x$) &= -10x^4\
+  #der($f$, $u$) &= e^u\
+  #der($f$, $x$) &= e^(3-2x^5) dot -10x^4\
+$
+
+- Find $f'(x)$ for $f(x) = e^(2x^6 - 4)$.
+
+$
+  #der($u$, $x$) &= 12x^5\
+  #der($f$, $u$) &= e^u\
+  #der($f$, $x$) &= e^(2x^6 - 4) dot 12x^5\
+$
+
+- Given $y = 3 dot 4^(x^2-1)$, find $#der($y$, $x$)$.
+
+$
+  #der($u$, $x$) &= 2x\
+  #der($y$, $u$) &= 3 dot 4^u dot ln 4\
+  #der($y$, $x$) &= 6x 4^(x^2 -1) ln 4\
+$
+
+- If $f(x) = 4^(7x)$, find $f'(x)$.
+
+$
+  #der($u$, $x$) &= 7\
+  #der($f$, $u$) &= 4^u ln 4\
+  #der($f$, $x$) &= 7 dot 4^(7x) ln 4\
+$
+
+- Find the equation of the tangent to $y = 5^(x^2- 1)$ at $x = 1$.
+
+$
+  #der($u$, $x$) &= 2x\
+  #der($y$, $u$) &= 5^u dot ln 5\
+  #der($y$, $x$) &= 2x dot ln 5 dot 5^(x^2 - 1)\
+$
+
+The slope of the tangent is, evaluating at $x = 1$:
+
+$
+  2 dot ln 5 dot 5^(1^2 - 1) &= 2 dot 5^0 dot ln 5\
+  &= 2 ln 5
+$
+
+And $y = 5^0 = 1$.
+
+Now put the pieces together:
+
+$
+  y - 1 &= 2 ln 5 (x -1)\
+  y &= 2x ln 5 - 2 ln 5 + 1
+$
+
+
+== The constant factor rule for indefinite integrals
+
+To take the integral of a power function with a constant factor, like $5x^2$, we can take the constant factor out of the integral:
+
+$
+  integral 5x^2 d x = 5 dot integral x^2 d x
+$
+
+This is the *constant factor rule*. In general:
+
+$
+  integral k space f(x) space d x = k integral f(x) space d x
+$
+
+Where $k$ is a *constant*. It does not work if $k$ is a variable.
+
+#exercises
+
+1. Calculate $integral 1/(2y^5) d y$
+
+$
+  integral 1/(2y^5) d y &= 1/2 integral y^(-5) \
+  &= 1/2 dot y^(-5+1)/(-5+1) + C\
+  &= 1/2 dot y^(-4)/(-4) + C\
+  &= 1/2 dot -1/(4y^4) + C\
+  &= -1/(8y^4) + C
+$
+
+2. Calculate $integral 1/(3x^6) d x$
+
+$
+  integral 1/(3x^6) d x &= 1/3 dot integral x^(-6)\
+  &= 1/3 dot x^(-5)/(-5) + C\
+  &= 1/3 dot - 1/(5x^5) + C\
+  &= -1/(15x^5) + C
+$
+
+3. Calculate $integral pi/2 d z$
+
+$
+  integral pi/2 d z &= pi/2 integral z^0 d z\
+  &= pi/2 dot z + C\
+  &= (pi z)/2 + C
 $
 
 = Vectors
