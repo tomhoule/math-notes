@@ -2775,6 +2775,54 @@ $
   y &= 2x ln 5 - 2 ln 5 + 1
 $
 
+- Find the equation of the tangent to the curve $y = 3^(2 - x)$ at $x = 1$.
+
+$
+  #der($u$,$x$) &= -1\
+  #der($y$, $u$) &= 3^u ln 3\
+  #der($y$, $x$) &= 3^(x -2) ln 3 dot -1\
+  &= -3^(2-x) ln 3\
+$
+
+Evaluating at $x = 1$:
+
+$
+  -3^(2-1) ln 3 = -3(ln 3)
+$
+
+Also, at $x = 1$, we have $y = 3^(2-1) = 3$.
+
+So the equation of the tangent is:
+
+$
+  y - 3 &= - 3ln 3 (x - 1)\
+  y &= -3 x ln 3 + 3 ln 3  +3
+$
+
+- Find the slope of the tangent to $y = 2^(9 - x^3)$ at $x = 2$.
+
+$
+  #der($u$, $x$) &= -3x^2\
+  #der($y$, $u$) &= 2^u ln 2\
+  #der($y$, $x$) &= 2^(9 - x^3) ln 2 dot -3 x^2\
+$
+
+Evaluating at $x = 2$:
+
+$
+  m &= 2^(9 - 2^3) ln 2 dot -3 dot 2^2\
+  &= 2^(9 - 8) ln 2 dot -3 dot 4\
+  &= -24 ln 2
+$
+
+- Find the derivative of $-2e^(4x)$
+
+$
+  #der($u$, $x$) &= 4\
+  #der($y$, $u$) &= -2e^u\
+  #der($y$, $x$) &= -2e^(4x) dot 4\
+  &= -8e^(4x)
+$
 
 == The constant factor rule for indefinite integrals
 
