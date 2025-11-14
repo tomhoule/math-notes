@@ -1517,6 +1517,40 @@ The period becomes $1/B dot 2pi$.
 
 The graph of tangent functions works the same way, except that you have to pay attention to the period being $pi$, not $2pi$.
 
+== Periodicity of the sine function
+
+Since for any integer $n$, $sin x = sin (x + 2n pi)$, we can use that property to simplify expressions.
+
+== Oddness of the sine function
+
+Sine is odd: $sin (-x) = - sin (x)$. That property can also be used to simplify expressions.
+
+== Periodicity of the cosine function
+
+Since for any integer $n$, $cos x = cos (x + 2n pi)$, we can use that property to simplify exressions.
+
+== Evenness of the cosine function
+
+Cosine is even: $cos (-x) = cos(x)$.
+
+#exercises
+
+- Given $cos a = 3/8$, find $8 cos(-a - 12 pi) + 2$.
+
+$
+  8 cos(-a - 12 pi) + 2 &= 8 cos a + 2\
+  &= 8 dot 3/8 + 2\
+  &= 5
+$
+
+- Given $cos x = -1/2$, find $2 cos(-x - 10 pi) + pi$.
+
+$
+  2 cos(-x - 10 pi) + pi &= 2 cos x + pi\
+  &= 2 dot -1/2 + pi \
+  &= pi - 1
+$
+
 = Limits
 
 == Limits of logarithmic functions
@@ -1736,599 +1770,6 @@ $
   4x - 9 &= 3\
   4x &= 12\
   x &= 3
-$
-
-== Finding the equation of a tangent line at a point
-
-- Find the derivative.
-- Evaluate the derivative at the given $x$. That is the slope.
-- Replace the slope, the $x$ and $y$ coordinates we are interested in in the point-slope form of the equation: $y - y_1 = m(x - x_1)$.
-
-#exercises
-
-- Find the equation of the tangent to the curve $y = x^2 + 5x$ at the point $(-1, -4)$.
-
-First find the derivative:
-
-$
-  y' = 2x + 5
-$
-
-Find the slope: $2 * -1 + 5 = 3$.
-
-Now substitute the coordinates in the point-slope form:
-
-$
-  y + 4 &= 3(x + 1)\
-  y &= 3x + 3 - 4\
-  y &= 3x - 1
-$
-
-- Find the equation of the tangent line to the curve $y = 2/x^2 + 6x$ at $(-1,-4)$.
-
-First the derivative: $y' = 2 dot -2x^(-1) + 6 = -4/x + 6$
-
-Then the slope: $(-4)/(-1) + 6 = 10$.
-
-Finally, substitute in the point-slope form:
-
-$
-  (y+4) &= 10(x + 1)\
-  y &= 10x + 10 - 4\
-  y &= 10x + 6
-$
-
-- Find where the tangent to the curve $y = 4sqrt(x) - 4x$ at $(1, 0)$ intersects the $y$-axis.
-
-First, find the derivative: $y' = d/(d x) (4sqrt(x) - 4x) = 4 dot 1/2 dot x^(-frac(1, 2, style: "skewed") ) - 4 = 2/sqrt(x) -4$
-
-Then, the slope: $2/sqrt(1) - 4 = 2 - 4 = -2$.
-
-The equation:
-
-$
-  y - 0 &= -2(x - 1)\
-  y &= -2x + 2
-$
-
-Then set $x = 0$:
-
-$
-  y &= -2x + 2\
-  y &= 2
-$
-
-- Find where the tangent to the curve $y = 9/x - 2x$ at the point $(3, -3)$ intersects the $x$-axis.
-
-First, find the derivative: $y' = 9 dot -1 dot x^(-2) - 2 = -9/(x^2) - 2$.
-
-Then the slope: $-9/(3^2) - 2 = -9/9 - 2 = -1 - 2 = -3$.
-
-Substitute in the point-slope equation:
-
-$
-  y + 3 &= -3(x - 3)\
-  y &= -3x + 9 - 3\
-  y &= -3x + 6
-$
-
-Then, set $y = 0$:
-
-$
-  0 &= -3x + 6\
-  -6 &= -3x\
-  x &= 2
-$
-
-== Finding the equation of a normal line at a point
-
-$
-  y - y_1 = m(x - x_1), #h(2em) m = - 1/(f'(x_1))
-$
-
-Like for any normal line, the slope is the negative reciprocal of the tangent line.
-
-#exercises
-
-- Find the slope of the normal to $y = 2/x^5 + 7x$ at (1, 9).
-
-First take the derivative:
-
-$
-  #der($y$, $x$) &= 2 dot -5 dot x^(-6) + 7\
-  &= -10/(x^6) + 7
-$
-
-Evaluating at $x = 1$, we have:
-
-$
-  m = -10/(1^6) + 7 = -10 + 7 = -3
-$
-
-The slope of the tangent is -3. So the slope of the normal is $1/3$.
-
-- Find the slope of the normal to $y = x^2 + x$ at (1, 2).
-
-Take the derivative:
-
-$
-  #der($y$, $x$) &= 2x + 1
-$
-
-Evaluate at $x = 1$:
-
-$
-  m = 2 dot 1 + 1 = 3
-$
-
-The slope of the tangent is 3, so the slope of the normal is $-1/3$.
-
-- Find the slope of the normal to $y = 1/(4x^2) + x/2$ at $(-1/2, 3/4)$.
-
-$
-  #der($y$, $x$) &= 1/4 dot -2 dot x^(-3) + 1/2\
-  &= - 1/2 dot x^(-3) + 1/2 \
-  &= -1/(2x^3) + 1/2
-$
-
-Evaluating at $x = -1/2$:
-
-$
-  m &= -1/(2(-1/2)^3) + 1/2\
-  &= -1/(-1/4) + 1/2 \
-  &= -1 dot -4 + 1/2 \
-  &= 4 + 1/2 \
-  &= 9/2
-$
-
-That is the slope of the tangent. Therefore, the slope of the normal is $-2/9$.
-
-- The equation of the normal to the curve $y = sqrt(x) - x^2$ at $(1, 0)$ is given by $x + p y = q$ where $p$ and $q$ are constants. Find $q - p$.
-
-$
-  #der($y$, $x$) &= 1/(2 sqrt(x)) - 2x
-$
-
-Now the slope of the tangent at $x = 1$:
-
-$
-  m = 1/(2 sqrt(1)) - 2 dot 1 = 1/2 - 2 = -3/2
-$
-
-So the slope of the normal is $2/3$.
-
-Now substitute $x$, $y$ and the slope in point-slope form:
-
-$
-  y - 0 &= 2/3(x - 1)\
-  3/2 y &= x - 1\
-  x - 3/2 y &= 1
-$
-
-So $p = -3/2$, $q = 1$ and $q - p = 5/2$.
-
-- The equation of the normal to $y = 2x^3$ at $(2, 16)$ is given by $x + p y = q$ where $p$ and $q$ are constants. Find $q - p$.
-
-$
-  #der($y$, $x$) &= 6x^2
-$
-
-Slope of the tangent at $(2, 16)$:
-
-$
-  m = 6 dot 2^2 = 6 dot 4 = 24
-$
-
-The slope of the normal is $-1/24$.
-
-Now substitute in point slope form:
-
-$
-  y - 16 &= -1/24(x - 2)\
-  (y - 16) dot -24  &= x - 2\
-  -24y + 384 &= x - 2\
-  384 + 2 &= x
-  x + 24y &= 386\
-$
-
-So $q - p = 386 - 24 = 362$
-
-- Equation of the normal to $y = 4/x$ at $(1, 4)$.
-
-$
-  #der($y$, $x$) = 4 dot -1 dot x^(-2) = -4/x^2
-$
-
-Slope of the tangent at $x=1$:
-
-$
-  m = -4/1^2 = -4
-$
-
-$therefore$ the slope of the normal is $1/4$.
-
-Substituting in the point-slope equation:
-
-$
-  y - 4 &= 1/4 dot (x - 1)\
-  (y - 4) dot 4 &= x - 1\
-  4y - 16 &= x - 1\
-  x - 4y &= -15
-$
-
-- Find the $y$ intercept of the normal to $f(x) = 3x^2 -4x + 1$ at $(2, 5)$.
-
-$
-  f'(x) &= 6x - 4
-$
-
-So the slope of the tangent at $x = 2$ is:
-
-$
-  m = 6 dot 2 - 4 = 8
-$
-
-$therefore$ the slope of the normal is $-1/8$.
-
-Equation:
-
-$
-  y - 5 &= -1/8(x - 2)\
-  -8y + 40 &= x - 2\
-  -8y &= x - 42\
-  y &= -x/8 + 21/4\
-$
-
-To find the $y$ intercept, we set $x = 0$ and get $(0, 21/4)$.
-
-- Find the $y$ intercept of the normal to $y = 2/x^2 + 1/2$ at $(2, 1)$.
-
-$
-  #der($y$, $x$) &= 2 dot -2 dot x^(-3)\
- &= -4/x^3
-$
-
-Slope of the tangent at $x = 2$:
-
-$
-  m = -4/(2^3) = -1/2
-$
-
-$therefore$ slope of the normal is $2$.
-
-Equation:
-
-$
-  y - 1 &= 2(x - 2)\
-  y &= 8x - 4 + 1\
-  y &= 8x - 3
-$
-
-Setting $x = 0$, we get $y &= -15$, so $(0, -15)$ is the $y$ intercept.
-
-== The second derivative
-
-It's the derivative of the derivative, denoted $f''(x)$:
-
-$
-  f''(x) = (f'(x))'
-$
-
-Or in Leibniz notation:
-
-$
-  f''(x) = #sndder("", $x$) = #der($$, $x$) (#der($f$, $x$))
-$
-
-The third derivative and the following work the same way. They are denoted:
-
-$
-  f^((n))(x) = #dern($n$, $$, $x$) f(x)
-$
-
-The parenthesis on the superscript is intentional, to distinguish the $n$-th derivative from the $n$-th power of $f$.
-
-#exercises
-
-- Find $f''(x)$ for $f(x) = 2x^3 + 1/x$.
-
-First derivative: $6x^2 - 1/x^2$.
-
-Second derivative: $12x  + 2/(x^(3))$
-
-- Find $f''(x)$ for $f(x) = 14x - 2/x + 4sqrt(x)$.
-
-First derivative: $14 +2x^(-2) + 2/(sqrt(x))$
-
-Second derivative: $-4x^(-3) - 1/(sqrt(x^3))$
-
-- Find $f''(x)$ for $f(x) = 4/x - 3 root(3, x)$.
-
-First derivative: $-4x^(-2) - x^(-2 slash 3)$.
-
-Second derivative: $8x^(-3) + 2/3 x^(-5 slash 3)$
-
-- Calculate $(d^2 y)/(d x^2)$ for $y = 4/sqrt(x) + 2 sin x$.
-
-First derivative: $4 dot -1/2 dot x^(-3/2) + 2 cos x = -2x^(-3/2) + 2 cos x$.
-
-Second derivative: $-2 dot -3/2 dot x^(-5/2) - 2 sin x = 3x^(-5/2) - 2 sin x $
-
-- Calculate #sndder("y", "x") for $y = -3sin x + 5x^3 - 19$.
-
-$
-  #der("y", "x") (-3sin x + 5x^3 - 19) &= -3cos x + 15x^2\
-  #sndder("y", "x") &= #der("", "x") (-3cos x + 15x^2)\
-  &= 3sin x + 30x
-$
-
-- Find $f^((4))(-2)$ for $f(x) = 3x^4 - 2x^2 - 4/x$.
-
-$
-  #der($$, $x$) &= 12x^3 - 4x + 4x^(-2)\
-  #dern(2, $$, $x$) &= 36x^2 - 4 - 8x^(-3)\
-  #dern(3, $$, $x$) &= 72x + 24x^(-4)\
-  #dern(4, $$, $x$) &= -96x^(-5) + 72\
-$
-
-Evaluating at $x = -2$, we get 75.
-
-- Given $f(x) = (5 - x^4)/(6x^2)$, find $f'''(x)$.
-
-$
-  f(x) &= (5-x^4)/(6x^2)\
-  &= 5/(6x^2) - x^4/(6x^2)\
-  &= 5/6 x^(-2) - 1/6 x^2\
-  #der($f$, $x$) &= -5/3 x^(-3) - 1/3 x\
-  #dern(2, $f$, $x$) &= 5x^(-4) - 1/3\
-  #dern(3, $f$, $x$) &= -20x^(-5)\
-$
-
-== The product rule
-
-$
-  (u(x) dot v(x))' = u'(x) dot v(x) + u(x) dot v'(x)
-$
-
-Or in Leibniz notation:
-
-$
-  #der($y$, $x$) = #der($u$, $x$) dot v + u dot #der($v$, $x$)
-$
-
-Multiplying out, then deriving also works, but is sometimes harder or not possible.
-
-#exercises
-
-- Differentiate $x tan x$.
-
-$
-  #der("", $x$) x tan x &= 1 dot tan x + x dot sec^2 x\
-  &= tan x + x sec^2 x\
-$
-
-- Differentiate $sqrt(x) sin x$.
-
-$
-  #der("", $x$) sqrt(x) sin x &= 1/2 dot 1/sqrt(x) dot sin x + sqrt(x) cos x\
-  &= (sin x)/(2sqrt(x)) + sqrt(x) cos x\
-$
-
-- Differentiate $f(x) = x^2 e^x$.
-
-$
-  #der("", $x$) x^2 e^x &= 2x e^x + x^2 e^x\
-  &= x e^x (x + 2)\
-$
-
-- Differentiate $f(x) = (x^2 + 3)ln x$.
-
-$
-  #der("", $x$) (x^2 + 3)ln x &= 2x ln x + (x^2 + 3)1/x\
-  &= 2x ln x + x + 3/x\
-$
-
-- If a curve $cal(C)$ is given by $y = e^x cos x$, calculate the slope of the tangent line to the curve at the point where $x = 0$.
-
-First calculate the derivative:
-
-$
-  #der($y$, $x$) &= e^x dot (-sin x) + e^x dot cos x\
-  &= e^x (cos x - sin x)\
-$
-
-To get the slope, we evaluate this at $x = 0$:
-
-$
-  e^0 (cos 0 - sin 0) = 1(1 - 0) = 1
-$
-
-- If a curve $cal(C)$ is given by $y = (x + 2) cos x$, find the slope of the tangent at $x = pi/2$.
-
-First find the derivative:
-
-$
-  #der($y$, $x$) &= 1 dot cos x + (x + 2) dot (-sin x)\
-  &= cos x + -x sin x - 2 sin x
-$
-
-Now evaluate this at $x = pi/2$:
-
-$
-  &space space cos pi/2 - pi/2 sin pi/2 - 2 sin pi/2\
-  &= 0 - pi / 2 dot 1 - 2 dot 1\
-  &= -pi / 2 - 2
-$
-
-= Integration
-
-== The antiderivative
-
-The antiderivative is the opposite of the derivative.
-
-Infinitely many antiderivatives map to the same function.
-
-For example, since the derivative of $x²$ is $2x$, we have $x^2$ as an antiderivative of $2x$. But $x^2 + 2$, $x^2 + 1$, etc. are also antiderivatives of $2x$.
-
-In general, the antiderivatives of $2x$ follow the pattern $x^2 + C$ where $C$ is a constant.
-
-We can also formulate that using the $integral$ symbol for integration:
-
-$
-  integral 2x space d x &= x^2 + C
-$
-
-Where $C$ is called the *constant of integration*.
-
-These integrals are *indefinite integrals*.
-
-The function being integrated (here $2x$) is called the *integrand*.
-
-== The power rule for integration
-
-$
-  integral x^n space d x = (x^(n+1))/(n+1) + C
-$
-
-#exercises
-
-1. Antiderivative of $display(1/x^4)$?
-
-$
-  integral 1/x^4 d x &= integral x^(-4) d x\
-                     &= (x^(-4 + 1))/(-4 + 1) + C\
-                     &= x^(-3)/(-3) + C\
-                     &= - 1/3x^(3) + C
-$
-
-2. Antiderivative of $x^(5/8)$
-
-$
-  integral x^(5/8) d x &= x^(5/8 + 1)/(5/8 + 1) + C\
-                       &= x^(13/8)/(13/8) + C\
-                       &= (8x^(13/8))/13 + C
-$
-
-3. Antiderivative of $root(5, x^7)$
-
-$
-  integral x^(7/5) d x &= x^(7 slash 5 + 1)/(7 slash 5 + 1) + C\
-  &= x^(12 slash 5)/(12 slash 5)\
-  &= (5x^(12 slash 5))/12
-$
-
-4. Calculate $display(integral(z/5 space d z))$
-
-$
-  integral(z/5 d z) &= 1/5 integral z space d z\
-                    &= 1/5 dot ((z^2)/2 + C) \
-                    &= (z^2)/10 + C
-$
-
-== The sum rule for indefinite integrals
-
-To take the integral of a sum, you can take the sum of the integrals of each term:
-
-$
-  integral (f(x) plus.minus g(x)) d x = integral f(x) space d x plus.minus integral g(x) space d x
-$
-
-The sum rule can be combined with the constant factor rule to integrate sums of constant multiples of functions:
-
-$
-  integral (k_1 f(x) plus k_2 g(x)) space d x = k_1 integral f(x) space d x plus k_2 integral g(x) space d x
-$
-
-#exercises
-
-- Calculate $integral sqrt(x)(2+x) space d x$
-
-$
-  integral sqrt(x)(2+x) space d x &= integral 2sqrt(x) + x dot sqrt(x) space d x \
-  &= integral 2 sqrt(x) space d x + integral x dot sqrt(x) space d x \
-  &= 2 integral sqrt(x) space d x + integral x^(3 slash 2) space d x\
-  &= 2 dot x^(3 slash 2)/(3/2) + x^(5 slash 2)/(5/2) + C\
-  &= (4x^(3 slash 2))/3 + (2x^(5 slash 2))/5 + C\
-  &= (4 sqrt(x^3))/3 + (2sqrt(x^5))/5 + C
-$
-
-- Calculate $display(integral (2 + x^4)/x^2 space d x)$
-
-$
-  integral (2 + x^4)/x^2 space d x &= integral 2/x^2 space d x + integral x^4/x^2 space d x\
-  &= integral 2 dot x^(-2) space d x + integral x^2 space d x\
-  &= 2 dot integral x^(-2) space d x + (x^3)/3 + C\
-  &= 2 dot -x^(-1) + x^3/3 + C\
-$
-
-- Calculate:
-
-$
-  integral (3 - x^2)^2 space d x &= integral (9 - 6x^2 + x^4) space d x\
-  &= 9 integral 1 space d x - 6 integral x^2 space d x + integral x^4 space d x\
-  &= 9x - 6(x^3)/3 + (x^5)/5 + C\
-  &= x^5/5 - 2x^3 + 9x + C
-$
-
-- Find the antiderivative of $z^3 + 2z - 1$
-
-$
-  integral z^3 + 2z - 1 space d z &= integral z^3 space d z + integral 2z space d z - integral 1 space d z\
-  &= z^4/4 + 2 z^2/2 - z + C\
-  &= z^4/4 + z^2 - z + C
-$
-
-== Integrating reciprocal functions
-
-Since $d/(d x) (ln x) = 1/x$ for $x > 0$, we can generalize to $x ≠ 0$ by using an absolute value:
-
-$
-  d/(d x) (ln |x|) = 1/x
-$
-
-Why, in the negative case? We have two functions, chained. $|x| = -x$ if x is negative. So we have $ln |x| = ln (-x)$.
-By the chain rule, $(d y)/(d x) = (d y)/(d u) dot (d u)/(d x)$. Here $(d u) dot (d x) (-x) = -1$ (constant factor rule), and $(d y)/(d u) ln(u) = 1/u$. So we substitute $x$ back in, and we get $(d y)/(d x) = 1/(-x) dot -1 = 1/x$
-
-So the integral is:
-
-$
-  integral 1/x space d x = ln |x| + C
-$
-
-== Integrating exponential functions
-
-Since $d/(d x) e^x = e^x$, and integration is the inverse of differentiation:
-
-$
-  integral e^x space d x = e^x + C
-$
-
-With a general base, the integral becomes:
-
-$
-  integral a^x space d x = (a^x)/ln(a) + C
-$
-
-#exercises
-
-- Calculate $integral (1/8)^x d x$.
-
-$
-  integral (1/8)^x d x &= (frac(1, 8, style: "skewed")^x)/ln(frac(1, 8, style: "skewed")) + C \
-$
-
-Using the laws of logarithms:
-
-$
-  ln(frac(1, 8, style: "skewed")) &= ln(1) - ln(8) \
-  &= 0 - ln 8 \
-  &= -ln 8
-$
-
-So the answer is:
-
-$
-  -(frac(1, 8, style: "vertical"))^x / (ln 8) + C
 $
 
 == Chain Rule for Differentiation
@@ -2822,6 +2263,656 @@ $
   #der($y$, $u$) &= -2e^u\
   #der($y$, $x$) &= -2e^(4x) dot 4\
   &= -8e^(4x)
+$
+
+== Finding the equation of a tangent line at a point
+
+- Find the derivative.
+- Evaluate the derivative at the given $x$. That is the slope.
+- Replace the slope, the $x$ and $y$ coordinates we are interested in in the point-slope form of the equation: $y - y_1 = m(x - x_1)$.
+
+#exercises
+
+- Find the equation of the tangent to the curve $y = x^2 + 5x$ at the point $(-1, -4)$.
+
+First find the derivative:
+
+$
+  y' = 2x + 5
+$
+
+Find the slope: $2 * -1 + 5 = 3$.
+
+Now substitute the coordinates in the point-slope form:
+
+$
+  y + 4 &= 3(x + 1)\
+  y &= 3x + 3 - 4\
+  y &= 3x - 1
+$
+
+- Find the equation of the tangent line to the curve $y = 2/x^2 + 6x$ at $(-1,-4)$.
+
+First the derivative: $y' = 2 dot -2x^(-1) + 6 = -4/x + 6$
+
+Then the slope: $(-4)/(-1) + 6 = 10$.
+
+Finally, substitute in the point-slope form:
+
+$
+  (y+4) &= 10(x + 1)\
+  y &= 10x + 10 - 4\
+  y &= 10x + 6
+$
+
+- Find where the tangent to the curve $y = 4sqrt(x) - 4x$ at $(1, 0)$ intersects the $y$-axis.
+
+First, find the derivative: $y' = d/(d x) (4sqrt(x) - 4x) = 4 dot 1/2 dot x^(-frac(1, 2, style: "skewed") ) - 4 = 2/sqrt(x) -4$
+
+Then, the slope: $2/sqrt(1) - 4 = 2 - 4 = -2$.
+
+The equation:
+
+$
+  y - 0 &= -2(x - 1)\
+  y &= -2x + 2
+$
+
+Then set $x = 0$:
+
+$
+  y &= -2x + 2\
+  y &= 2
+$
+
+- Find where the tangent to the curve $y = 9/x - 2x$ at the point $(3, -3)$ intersects the $x$-axis.
+
+First, find the derivative: $y' = 9 dot -1 dot x^(-2) - 2 = -9/(x^2) - 2$.
+
+Then the slope: $-9/(3^2) - 2 = -9/9 - 2 = -1 - 2 = -3$.
+
+Substitute in the point-slope equation:
+
+$
+  y + 3 &= -3(x - 3)\
+  y &= -3x + 9 - 3\
+  y &= -3x + 6
+$
+
+Then, set $y = 0$:
+
+$
+  0 &= -3x + 6\
+  -6 &= -3x\
+  x &= 2
+$
+
+== Finding the equation of a normal line at a point
+
+$
+  y - y_1 = m(x - x_1), #h(2em) m = - 1/(f'(x_1))
+$
+
+Like for any normal line, the slope is the negative reciprocal of the tangent line.
+
+#exercises
+
+- Find the slope of the normal to $y = 2/x^5 + 7x$ at (1, 9).
+
+First take the derivative:
+
+$
+  #der($y$, $x$) &= 2 dot -5 dot x^(-6) + 7\
+  &= -10/(x^6) + 7
+$
+
+Evaluating at $x = 1$, we have:
+
+$
+  m = -10/(1^6) + 7 = -10 + 7 = -3
+$
+
+The slope of the tangent is -3. So the slope of the normal is $1/3$.
+
+- Find the slope of the normal to $y = x^2 + x$ at (1, 2).
+
+Take the derivative:
+
+$
+  #der($y$, $x$) &= 2x + 1
+$
+
+Evaluate at $x = 1$:
+
+$
+  m = 2 dot 1 + 1 = 3
+$
+
+The slope of the tangent is 3, so the slope of the normal is $-1/3$.
+
+- Find the slope of the normal to $y = 1/(4x^2) + x/2$ at $(-1/2, 3/4)$.
+
+$
+  #der($y$, $x$) &= 1/4 dot -2 dot x^(-3) + 1/2\
+  &= - 1/2 dot x^(-3) + 1/2 \
+  &= -1/(2x^3) + 1/2
+$
+
+Evaluating at $x = -1/2$:
+
+$
+  m &= -1/(2(-1/2)^3) + 1/2\
+  &= -1/(-1/4) + 1/2 \
+  &= -1 dot -4 + 1/2 \
+  &= 4 + 1/2 \
+  &= 9/2
+$
+
+That is the slope of the tangent. Therefore, the slope of the normal is $-2/9$.
+
+- The equation of the normal to the curve $y = sqrt(x) - x^2$ at $(1, 0)$ is given by $x + p y = q$ where $p$ and $q$ are constants. Find $q - p$.
+
+$
+  #der($y$, $x$) &= 1/(2 sqrt(x)) - 2x
+$
+
+Now the slope of the tangent at $x = 1$:
+
+$
+  m = 1/(2 sqrt(1)) - 2 dot 1 = 1/2 - 2 = -3/2
+$
+
+So the slope of the normal is $2/3$.
+
+Now substitute $x$, $y$ and the slope in point-slope form:
+
+$
+  y - 0 &= 2/3(x - 1)\
+  3/2 y &= x - 1\
+  x - 3/2 y &= 1
+$
+
+So $p = -3/2$, $q = 1$ and $q - p = 5/2$.
+
+- The equation of the normal to $y = 2x^3$ at $(2, 16)$ is given by $x + p y = q$ where $p$ and $q$ are constants. Find $q - p$.
+
+$
+  #der($y$, $x$) &= 6x^2
+$
+
+Slope of the tangent at $(2, 16)$:
+
+$
+  m = 6 dot 2^2 = 6 dot 4 = 24
+$
+
+The slope of the normal is $-1/24$.
+
+Now substitute in point slope form:
+
+$
+  y - 16 &= -1/24(x - 2)\
+  (y - 16) dot -24  &= x - 2\
+  -24y + 384 &= x - 2\
+  384 + 2 &= x
+  x + 24y &= 386\
+$
+
+So $q - p = 386 - 24 = 362$
+
+- Equation of the normal to $y = 4/x$ at $(1, 4)$.
+
+$
+  #der($y$, $x$) = 4 dot -1 dot x^(-2) = -4/x^2
+$
+
+Slope of the tangent at $x=1$:
+
+$
+  m = -4/1^2 = -4
+$
+
+$therefore$ the slope of the normal is $1/4$.
+
+Substituting in the point-slope equation:
+
+$
+  y - 4 &= 1/4 dot (x - 1)\
+  (y - 4) dot 4 &= x - 1\
+  4y - 16 &= x - 1\
+  x - 4y &= -15
+$
+
+- Find the $y$ intercept of the normal to $f(x) = 3x^2 -4x + 1$ at $(2, 5)$.
+
+$
+  f'(x) &= 6x - 4
+$
+
+So the slope of the tangent at $x = 2$ is:
+
+$
+  m = 6 dot 2 - 4 = 8
+$
+
+$therefore$ the slope of the normal is $-1/8$.
+
+Equation:
+
+$
+  y - 5 &= -1/8(x - 2)\
+  -8y + 40 &= x - 2\
+  -8y &= x - 42\
+  y &= -x/8 + 21/4\
+$
+
+To find the $y$ intercept, we set $x = 0$ and get $(0, 21/4)$.
+
+- Find the $y$ intercept of the normal to $y = 2/x^2 + 1/2$ at $(2, 1)$.
+
+$
+  #der($y$, $x$) &= 2 dot -2 dot x^(-3)\
+ &= -4/x^3
+$
+
+Slope of the tangent at $x = 2$:
+
+$
+  m = -4/(2^3) = -1/2
+$
+
+$therefore$ slope of the normal is $2$.
+
+Equation:
+
+$
+  y - 1 &= 2(x - 2)\
+  y &= 8x - 4 + 1\
+  y &= 8x - 3
+$
+
+Setting $x = 0$, we get $y &= -15$, so $(0, -15)$ is the $y$ intercept.
+
+== The second derivative
+
+It's the derivative of the derivative, denoted $f''(x)$:
+
+$
+  f''(x) = (f'(x))'
+$
+
+Or in Leibniz notation:
+
+$
+  f''(x) = #sndder("", $x$) = #der($$, $x$) (#der($f$, $x$))
+$
+
+The third derivative and the following work the same way. They are denoted:
+
+$
+  f^((n))(x) = #dern($n$, $$, $x$) f(x)
+$
+
+The parenthesis on the superscript is intentional, to distinguish the $n$-th derivative from the $n$-th power of $f$.
+
+#exercises
+
+- Find $f''(x)$ for $f(x) = 2x^3 + 1/x$.
+
+First derivative: $6x^2 - 1/x^2$.
+
+Second derivative: $12x  + 2/(x^(3))$
+
+- Find $f''(x)$ for $f(x) = 14x - 2/x + 4sqrt(x)$.
+
+First derivative: $14 +2x^(-2) + 2/(sqrt(x))$
+
+Second derivative: $-4x^(-3) - 1/(sqrt(x^3))$
+
+- Find $f''(x)$ for $f(x) = 4/x - 3 root(3, x)$.
+
+First derivative: $-4x^(-2) - x^(-2 slash 3)$.
+
+Second derivative: $8x^(-3) + 2/3 x^(-5 slash 3)$
+
+- Calculate $(d^2 y)/(d x^2)$ for $y = 4/sqrt(x) + 2 sin x$.
+
+First derivative: $4 dot -1/2 dot x^(-3/2) + 2 cos x = -2x^(-3/2) + 2 cos x$.
+
+Second derivative: $-2 dot -3/2 dot x^(-5/2) - 2 sin x = 3x^(-5/2) - 2 sin x $
+
+- Calculate #sndder("y", "x") for $y = -3sin x + 5x^3 - 19$.
+
+$
+  #der("y", "x") (-3sin x + 5x^3 - 19) &= -3cos x + 15x^2\
+  #sndder("y", "x") &= #der("", "x") (-3cos x + 15x^2)\
+  &= 3sin x + 30x
+$
+
+- Find $f^((4))(-2)$ for $f(x) = 3x^4 - 2x^2 - 4/x$.
+
+$
+  #der($$, $x$) &= 12x^3 - 4x + 4x^(-2)\
+  #dern(2, $$, $x$) &= 36x^2 - 4 - 8x^(-3)\
+  #dern(3, $$, $x$) &= 72x + 24x^(-4)\
+  #dern(4, $$, $x$) &= -96x^(-5) + 72\
+$
+
+Evaluating at $x = -2$, we get 75.
+
+- Given $f(x) = (5 - x^4)/(6x^2)$, find $f'''(x)$.
+
+$
+  f(x) &= (5-x^4)/(6x^2)\
+  &= 5/(6x^2) - x^4/(6x^2)\
+  &= 5/6 x^(-2) - 1/6 x^2\
+  #der($f$, $x$) &= -5/3 x^(-3) - 1/3 x\
+  #dern(2, $f$, $x$) &= 5x^(-4) - 1/3\
+  #dern(3, $f$, $x$) &= -20x^(-5)\
+$
+
+== The product rule
+
+$
+  (u(x) dot v(x))' = u'(x) dot v(x) + u(x) dot v'(x)
+$
+
+Or in Leibniz notation:
+
+$
+  #der($y$, $x$) = #der($u$, $x$) dot v + u dot #der($v$, $x$)
+$
+
+Multiplying out, then deriving also works, but is sometimes harder or not possible.
+
+#exercises
+
+- Differentiate $x tan x$.
+
+$
+  #der("", $x$) x tan x &= 1 dot tan x + x dot sec^2 x\
+  &= tan x + x sec^2 x\
+$
+
+- Differentiate $sqrt(x) sin x$.
+
+$
+  #der("", $x$) sqrt(x) sin x &= 1/2 dot 1/sqrt(x) dot sin x + sqrt(x) cos x\
+  &= (sin x)/(2sqrt(x)) + sqrt(x) cos x\
+$
+
+- Differentiate $f(x) = x^2 e^x$.
+
+$
+  #der("", $x$) x^2 e^x &= 2x e^x + x^2 e^x\
+  &= x e^x (x + 2)\
+$
+
+- Differentiate $f(x) = (x^2 + 3)ln x$.
+
+$
+  #der("", $x$) (x^2 + 3)ln x &= 2x ln x + (x^2 + 3)1/x\
+  &= 2x ln x + x + 3/x\
+$
+
+- If a curve $cal(C)$ is given by $y = e^x cos x$, calculate the slope of the tangent line to the curve at the point where $x = 0$.
+
+First calculate the derivative:
+
+$
+  #der($y$, $x$) &= e^x dot (-sin x) + e^x dot cos x\
+  &= e^x (cos x - sin x)\
+$
+
+To get the slope, we evaluate this at $x = 0$:
+
+$
+  e^0 (cos 0 - sin 0) = 1(1 - 0) = 1
+$
+
+- If a curve $cal(C)$ is given by $y = (x + 2) cos x$, find the slope of the tangent at $x = pi/2$.
+
+First find the derivative:
+
+$
+  #der($y$, $x$) &= 1 dot cos x + (x + 2) dot (-sin x)\
+  &= cos x + -x sin x - 2 sin x
+$
+
+Now evaluate this at $x = pi/2$:
+
+$
+  &space space cos pi/2 - pi/2 sin pi/2 - 2 sin pi/2\
+  &= 0 - pi / 2 dot 1 - 2 dot 1\
+  &= -pi / 2 - 2
+$
+
+== The quotient rule
+
+If
+
+$
+  f(x) &= u(x)/v(x)
+$
+
+then
+
+$
+  f'(x) &= (u'(x) dot v(x) - u(x) dot v'(x))/((v(x))^2)
+$
+
+Or in Leibniz notation:
+
+$
+  #der($$, $x$) (u/v) = (v#der($u$, $x$) - u#der($v$, $x$))/(v^2)
+$
+
+#exercises
+
+- Find the derivative of $f(x) = (x-1)/(x+1)$.
+
+$
+  u(x) &= x-1\
+  v(x) &= x+1\
+  u'(x) &= 1\
+  v'(x) &= 1\
+$
+
+So we have:
+
+$
+  f'(x) &= (1 dot (x+1) - (x-1) dot 1)/(x+1)^2\
+  &= 2/(x+1)^2
+$
+
+- Given that $f(x) = (x^2 - 3)/(x+2)$, find $f'(x)$.
+
+$
+  u'(x) &= 2x\
+  v'(x) &= 1\
+  f'(x) &= (2x dot (x+2) - (x^2 - 3) dot 1)/(x+2)^2\
+  &= (2x^2 + 4x - x^2 + 3)/(x+2)^2\
+  &= (x^2 + 4x + 3)/(x+2)^2
+$
+
+- Differentiate $f(x) = (3x^2)/(cos x)$.
+
+$
+  u'(x) &= 6x\
+  v'(x) &= -sin x\
+  f'(x) &= (6x dot cos x - (3x^2 dot -sin x))/(cos x)^2\
+  &= (6x cos x + 3x^2 sin x)/(cos^2 x)\
+$
+
+= Integration
+
+== The antiderivative
+
+The antiderivative is the opposite of the derivative.
+
+Infinitely many antiderivatives map to the same function.
+
+For example, since the derivative of $x²$ is $2x$, we have $x^2$ as an antiderivative of $2x$. But $x^2 + 2$, $x^2 + 1$, etc. are also antiderivatives of $2x$.
+
+In general, the antiderivatives of $2x$ follow the pattern $x^2 + C$ where $C$ is a constant.
+
+We can also formulate that using the $integral$ symbol for integration:
+
+$
+  integral 2x space d x &= x^2 + C
+$
+
+Where $C$ is called the *constant of integration*.
+
+These integrals are *indefinite integrals*.
+
+The function being integrated (here $2x$) is called the *integrand*.
+
+== The power rule for integration
+
+$
+  integral x^n space d x = (x^(n+1))/(n+1) + C
+$
+
+#exercises
+
+1. Antiderivative of $display(1/x^4)$?
+
+$
+  integral 1/x^4 d x &= integral x^(-4) d x\
+                     &= (x^(-4 + 1))/(-4 + 1) + C\
+                     &= x^(-3)/(-3) + C\
+                     &= - 1/3x^(3) + C
+$
+
+2. Antiderivative of $x^(5/8)$
+
+$
+  integral x^(5/8) d x &= x^(5/8 + 1)/(5/8 + 1) + C\
+                       &= x^(13/8)/(13/8) + C\
+                       &= (8x^(13/8))/13 + C
+$
+
+3. Antiderivative of $root(5, x^7)$
+
+$
+  integral x^(7/5) d x &= x^(7 slash 5 + 1)/(7 slash 5 + 1) + C\
+  &= x^(12 slash 5)/(12 slash 5)\
+  &= (5x^(12 slash 5))/12
+$
+
+4. Calculate $display(integral(z/5 space d z))$
+
+$
+  integral(z/5 d z) &= 1/5 integral z space d z\
+                    &= 1/5 dot ((z^2)/2 + C) \
+                    &= (z^2)/10 + C
+$
+
+== The sum rule for indefinite integrals
+
+To take the integral of a sum, you can take the sum of the integrals of each term:
+
+$
+  integral (f(x) plus.minus g(x)) d x = integral f(x) space d x plus.minus integral g(x) space d x
+$
+
+The sum rule can be combined with the constant factor rule to integrate sums of constant multiples of functions:
+
+$
+  integral (k_1 f(x) plus k_2 g(x)) space d x = k_1 integral f(x) space d x plus k_2 integral g(x) space d x
+$
+
+#exercises
+
+- Calculate $integral sqrt(x)(2+x) space d x$
+
+$
+  integral sqrt(x)(2+x) space d x &= integral 2sqrt(x) + x dot sqrt(x) space d x \
+  &= integral 2 sqrt(x) space d x + integral x dot sqrt(x) space d x \
+  &= 2 integral sqrt(x) space d x + integral x^(3 slash 2) space d x\
+  &= 2 dot x^(3 slash 2)/(3/2) + x^(5 slash 2)/(5/2) + C\
+  &= (4x^(3 slash 2))/3 + (2x^(5 slash 2))/5 + C\
+  &= (4 sqrt(x^3))/3 + (2sqrt(x^5))/5 + C
+$
+
+- Calculate $display(integral (2 + x^4)/x^2 space d x)$
+
+$
+  integral (2 + x^4)/x^2 space d x &= integral 2/x^2 space d x + integral x^4/x^2 space d x\
+  &= integral 2 dot x^(-2) space d x + integral x^2 space d x\
+  &= 2 dot integral x^(-2) space d x + (x^3)/3 + C\
+  &= 2 dot -x^(-1) + x^3/3 + C\
+$
+
+- Calculate:
+
+$
+  integral (3 - x^2)^2 space d x &= integral (9 - 6x^2 + x^4) space d x\
+  &= 9 integral 1 space d x - 6 integral x^2 space d x + integral x^4 space d x\
+  &= 9x - 6(x^3)/3 + (x^5)/5 + C\
+  &= x^5/5 - 2x^3 + 9x + C
+$
+
+- Find the antiderivative of $z^3 + 2z - 1$
+
+$
+  integral z^3 + 2z - 1 space d z &= integral z^3 space d z + integral 2z space d z - integral 1 space d z\
+  &= z^4/4 + 2 z^2/2 - z + C\
+  &= z^4/4 + z^2 - z + C
+$
+
+== Integrating reciprocal functions
+
+Since $d/(d x) (ln x) = 1/x$ for $x > 0$, we can generalize to $x ≠ 0$ by using an absolute value:
+
+$
+  d/(d x) (ln |x|) = 1/x
+$
+
+Why, in the negative case? We have two functions, chained. $|x| = -x$ if x is negative. So we have $ln |x| = ln (-x)$.
+By the chain rule, $(d y)/(d x) = (d y)/(d u) dot (d u)/(d x)$. Here $(d u) dot (d x) (-x) = -1$ (constant factor rule), and $(d y)/(d u) ln(u) = 1/u$. So we substitute $x$ back in, and we get $(d y)/(d x) = 1/(-x) dot -1 = 1/x$
+
+So the integral is:
+
+$
+  integral 1/x space d x = ln |x| + C
+$
+
+== Integrating exponential functions
+
+Since $d/(d x) e^x = e^x$, and integration is the inverse of differentiation:
+
+$
+  integral e^x space d x = e^x + C
+$
+
+With a general base, the integral becomes:
+
+$
+  integral a^x space d x = (a^x)/ln(a) + C
+$
+
+#exercises
+
+- Calculate $integral (1/8)^x d x$.
+
+$
+  integral (1/8)^x d x &= (frac(1, 8, style: "skewed")^x)/ln(frac(1, 8, style: "skewed")) + C \
+$
+
+Using the laws of logarithms:
+
+$
+  ln(frac(1, 8, style: "skewed")) &= ln(1) - ln(8) \
+  &= 0 - ln 8 \
+  &= -ln 8
+$
+
+So the answer is:
+
+$
+  -(frac(1, 8, style: "vertical"))^x / (ln 8) + C
 $
 
 == The constant factor rule for indefinite integrals
