@@ -1124,6 +1124,81 @@ A function is invertible on an interval if and only if it is one-to-one on that 
 
 To check if a function is one-to-one, we can use the horizontal line test. If any horizontal line intersects the graph of the function at most once, then the function is one-to-one.
 
+== Finding the inverse of a function
+
+E.g. $f(x) = 3sqrt(x) + 2$.
+
+- First, replace $f(x)$ by $y$: $y = 3 sqrt(x) + 2$.
+- Then swap $x$ and $y$: $x = 3 sqrt(y) + 2$.
+- Then solve for $y$:
+
+$
+  x &= 3sqrt(y)+2\
+  (x-2)/3 &= sqrt(y)\
+  ((x-2)/3)^2 &= sqrt(y)^2\
+  y &= (x-2)^2/9
+$
+
+- We just found $f^(-1)(x)$.
+
+Note that since the domain and range of $f(x)$ are $x >= 0$ and $f(x) >= 2$, the domain and range of $f^(-1)(x)$ are $x >= 2$ and $f^(-1)(x) >= 0$.
+
+#exercises
+
+- Find the inverse of $f(x) = -5sqrt(x)$.
+
+$
+  x &= -5sqrt(y)\
+  -x/5 &= sqrt(y)\
+  x^2/25 &= y
+$
+
+- Find the inverse of the function $display(f(x) = 1/(4 root(3, x)) + 2)$.
+
+$
+  x &= 1/(4root(3, y)) + 2\
+  x - 2 &= 1/(4root(3, y))\
+  1/(x-2) &= 4root(3, y)\
+  1/(4(x - 2)) &= root(3, y)\
+  1/(64(x - 2)^3) &= y\
+$
+
+- Find the inverse of $f(x) = 1/2 sqrt(x-1) + 3$.
+
+$
+  x &= 1/2 sqrt(y-1)+3\
+  x-3 &= 1/2 sqrt(y-1)\
+  2(x-3) &= sqrt(y-1)\
+  4(x-3)^2 &= y - 1
+  y &= 4(x-3)^2 + 1
+$
+
+- The function $f(x) = 2 root(3, 4x + k) + 3$ has an inverse function $f^(-1)(x) = 1/32 (x-3)^3 - 1/2$. Find $k$.
+
+Let's invert $f(x)$ ourselves and compare with the given inverted function.
+
+$
+  x &= 2 root(3, 4y + k) + 3\
+  (x - 3)/2 &= root(3, 4y + k)\
+  (x- 3)^3/8 &= 4y + k\
+  (x-3)^3/8 - k &= 4y\
+  y &= (x-3)^3/32 - k/4\
+$
+
+So we have $k/4 = 1/2$. Then $k = 2$.
+
+- Given $f(x) = k sqrt(2x - 1)$ and $f^(-1)(x) = 1/8 x^2 + 1/2$, and $k > 0$, find $k$.
+
+$
+  x &= k sqrt(2y - 1)\
+  x/k &= sqrt(2y - 1)\
+  x/k^2 &= 2y - 1\
+  x/k^2 + 1 &= 2y\
+  y &= x/(2k^2) + 1/2\
+$
+
+So we have $2k^2 = 8$. Then $k = 2$.
+
 = Statistics
 
 == Variance
@@ -2454,7 +2529,7 @@ $
   y - 16 &= -1/24(x - 2)\
   (y - 16) dot -24  &= x - 2\
   -24y + 384 &= x - 2\
-  384 + 2 &= x
+  384 + 2 &= x\
   x + 24y &= 386\
 $
 
