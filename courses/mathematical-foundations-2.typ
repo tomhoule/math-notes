@@ -1626,6 +1626,23 @@ $
   &= pi - 1
 $
 
+== Tangent and cotangent in terms of sin and cos
+
+$
+  tan(theta) &= sin(theta)/cos(theta)\
+  cot(theta) &= cos(theta)/sin(theta)\
+$
+
+Let's derive this by working backwards from our result to the definition of the tangent:
+
+$
+  tan(theta) &= sin(theta)/cos(theta)\
+  &= ("opposite" / "hypotenuse") / ("adjacent" / "hypotenuse")\
+  &= ("opposite" dot "hypotenuse")/("hypotenuse" dot "adjacent")\
+  &= ("opposite" dot cancel("hypotenuse"))/(cancel("hypotenuse") dot "adjacent")\
+  &= "opposite" / "adjacent"
+$
+
 = Limits
 
 == Limits of logarithmic functions
