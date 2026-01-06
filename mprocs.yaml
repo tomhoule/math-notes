@@ -4,3 +4,18 @@ procs:
       - typst
       - watch
       - courses/mathematical-foundations-2.typ
+  typst-scratch:
+    cmd:
+      - typst
+      - watch
+      - scratch/scratch.typ
+  marimo:
+    cwd: scratch
+    autostart: false
+    autorestart: false
+    cmd:
+      - uv
+      - run
+      - marimo
+      - edit
+      - scratch.py

@@ -6,7 +6,7 @@
   "cells": [
     {
       "id": "Hbol",
-      "code_hash": "b98e97719eb618f89d7a6ed2cf725023",
+      "code_hash": "89cdc02f794aaa156c7787d998fd0092",
       "outputs": [
         {
           "type": "data",
@@ -18,8 +18,8 @@
       "console": []
     },
     {
-      "id": "RAxo",
-      "code_hash": "5d59b103949ebf734c722cd57350d140",
+      "id": "MJUe",
+      "code_hash": "f42ddc0ea992f054ba4b13ae8ed68e44",
       "outputs": [
         {
           "type": "data",
@@ -31,20 +31,26 @@
       "console": []
     },
     {
-      "id": "kPVL",
-      "code_hash": "412252e0f79d39146c42d816284fd0d5",
+      "id": "yxXL",
+      "code_hash": "c2f0475a90da79078422946902626ca1",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<span class=\"markdown prose dark:prose-invert contents\"><marimo-tex class=\"arithmatex\">||[\\frac{3}{4}||]</marimo-tex></span>"
+            "text/html": "<span class=\"markdown prose dark:prose-invert contents\"><marimo-tex class=\"arithmatex\">||[\\frac{\\pi}{3}||]</marimo-tex></span>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "SUtA",
+      "id": "qLhB",
+      "code_hash": null,
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "MhQL",
       "code_hash": null,
       "outputs": [],
       "console": []
