@@ -9,21 +9,25 @@
 
 #set page(paper: "a4", margin: (x: 4.4cm, y: 1.8cm))
 
-#set text(font: "STIX Two Text")
-#show math.equation: set text(font: "STIX Two Math")
+// #set text(font: "Bitter Pro", size: 10pt)
+// #set text(font: "Aleo", size: 10pt)
+// #set text(font: "Zilla Slab", size: 11pt)
+// #show math.equation: set text(font: "New Computer Modern Math", size: 12pt)
+// #show math.equation: set text(font: "STIX Two Math", size: 11pt)
 
-// #set text(font: "TeX Gyre Pagella")
-// #show math.equation: set text(font: "TeX Gyre Pagella Math")
+// #set text(font: "Source Sans Pro", size: 11pt)
+#set text(font: "Merriweather", size: 9.5pt)
+// #set text(font: "Lora", size: 10pt)
+// #set text(font: "IBM Plex Sans", size: 10pt)
+#show math.equation: set text(font: "New Computer Modern Math", size: 12pt)
 
-// #set text(font: "EB Garamond")
-// #show math.equation: set text(font: "Garamond-Math")
+// #set text(font: "STIX Two Text")
+// #show math.equation: set text(font: "STIX Two Math")
 
+// // Works with STIX Two Math
+// #set text(font: "TeX Gyre Pagella", size: 10.5pt)
 
-// #set text(font: "Fira Sans")
-// #show math.equation: set text(font: "Fira Math")
-
-// #set text(font: "New Computer Modern")
-// #show math.equation: set text(font: "New Computer Modern Math")
+#set par(justify: true)
 
 #let accent-color = rgb(0x26, 0x42, 0x8b)
 #let theorem(content) = box(fill: rgb(255, 200, 184), inset: 1em, [*Theorem.* #content])
@@ -72,11 +76,16 @@
 
 _abcdefghijklmnopqrstuvwxyz_ $a b c d e f g h i j k l m n o p q r s t u v w x y z$
 
+x $x$ _x_
+
+Iil _Iil_
+
+
 = Combinatorics
 
 == Permutations
 
-Sequences without repetition of $n$, written $attach(P, bl: n, br: k)$, are ordered arrangements of $k$ elements in an $n$ elements set. The formula for the number of permutations is:
+Sequences without repetition of $n$, written $attach(P, bl: n, br: k)$~, are ordered arrangements of $k$ elements in an $n$ elements set. The formula for the number of permutations is:
 
 $
   n!/(n-k)!
